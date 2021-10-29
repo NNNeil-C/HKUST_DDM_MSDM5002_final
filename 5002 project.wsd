@@ -1,0 +1,38 @@
+/*
+ * @Author: Neil.Chen Zifeng 
+ * @Date: 2021-10-29 12:18:06 
+ * @Last Modified by: Neil.Chen Zifeng
+ * @Last Modified time: 2021-10-29 21:27:43
+ */
+@startuml Gomoku
+title Gomoku
+class Gamer {
+    - find_best_action() : Position
+}
+class GameBoard {
+    + place_piece(Position pos, Piece piece) : void
+    + update_ui() : void
+}
+class Position {
+    - x : int
+    - y : int
+    + Position(int x, int y)
+    + get_x() : int
+    + get_y() : int
+    + set_x() : void
+    + set_y() : void
+}
+class Piece {
+    - color : string
+    + Piece(string color)
+    + get_color() : string
+    + set_color() : string
+}
+interface drop_on_board {
+    + drop(GameBoard gb, Piece piece, Position pos) : void
+}
+
+GameBoard <.. Position
+Gamer <-- Piece
+Gamer <|.. drop_on_board
+@enduml
