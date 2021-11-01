@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "__hash_table": "cpp",
+        "__node_handle": "cpp"
+    }
+}
