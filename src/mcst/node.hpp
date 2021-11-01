@@ -8,19 +8,21 @@
 #define NODE_HPP
 #define MAXN 8
 #include <cstdlib>
+#include <cstring>
 class Node
 {
 private:
-    int visitd_time;
+    int visited_time;
     int win_time;
     int **game_board;
 public:
     Node();
-    Node(Node &src);
+    Node(Node &);
     ~Node();
 };
 
-Node::Node() : visitd_time(0), win_time(0), game_board(NULL)
+//default constructor
+Node::Node() : visited_time(0), win_time(0), game_board(NULL)
 {
     game_board = new int*[MAXN];
     for (int i = 0; i <= MAXN; i ++)
@@ -29,6 +31,22 @@ Node::Node() : visitd_time(0), win_time(0), game_board(NULL)
     }
 }
 
+//copy constructor
+Node::Node(Node &src)
+{
+    this->visited_time = src.visited_time;
+    this->win_time = src.win_time;
+    game_board = new int*[MAXN];
+    for (int i = 0; i <= MAXN; i ++)
+    {
+        game_board[i] = new int[MAXN];
+        //copy from src node
+        memcpy(game_board[i], src.game_board[i], sizeof(int) * MAXN);
+    }
+
+}
+
+//destructor
 Node::~Node()
 {
     for (int i = 0; i <= MAXN; i ++)
