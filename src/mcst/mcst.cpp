@@ -2,7 +2,7 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:19:04 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-02 21:27:57
+ * @Last Modified time: 2021-11-02 21:46:09
  */
 
 #include "node.hpp"
@@ -115,9 +115,12 @@ void Mcst::do_single_search()
 }
 
 // Don't forget 'is_completed' and 'last_drop' and 'last_piece'
+// is_completed should also handle in backpropagation
 Node* Mcst::expand (Node *currnet_node)
 {
-
+    Node *new_node = new Node(currnet_node->game_board);
+    currnet_node->children.push_back(new_node);
+    //tbd...
 }
 
 double Mcst::do_simulation(Node *current_node)
@@ -251,15 +254,12 @@ bool Mcst::check_win_anti_diagnal (int game_board[][MAXN], int which_piece, int 
     return true;
 }
 
-std::pair<int, int> Mcst::find_random_valid_position (int game_board[][MAXN])
+bool is_empty_game_board(int game_board[][MAXN])
 {
-    std::vector<std::pair<int, int > > valid_positions;
-    valid_positions.reserve(32);
-    //if the game board is empty, all position is valid
-    bool is_empty_game_board = true;
+    bool is_empty = true;
     for (int i = 0; i < MAXN; i ++)
     {
-        if (!is_empty_game_board)
+        if (!is_empty)
         {
             break;
         }
@@ -267,13 +267,21 @@ std::pair<int, int> Mcst::find_random_valid_position (int game_board[][MAXN])
         {
             if (game_board[i][j] != 0)
             {
-                is_empty_game_board = false;
+                is_empty = false;
                 break;
             }
         }
     }
+    return is_empty;
+}
+
+std::pair<int, int> Mcst::find_random_valid_position (int game_board[][MAXN])
+{
+    std::vector<std::pair<int, int > > valid_positions;
+    valid_positions.reserve(32);
+    //if the game board is empty, all position is valid
     //randomly pick one position on the game_board
-    if (is_empty_game_board)
+    if (is_empty_game_board(game_board))
     {
         int x = rand() % MAXN;
         int y = rand() % MAXN;

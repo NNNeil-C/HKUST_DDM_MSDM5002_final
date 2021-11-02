@@ -2,7 +2,7 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:23:55 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-02 16:31:22
+ * @Last Modified time: 2021-11-02 21:43:14
  */
 #ifndef NODE_HPP
 #define NODE_HPP
@@ -12,10 +12,8 @@
 #include <list>
 class Node
 {
-private:
-    int **game_board;
-    
 public:
+    int **game_board;
     double visited_time;
     double win_time;
     bool is_completed;
