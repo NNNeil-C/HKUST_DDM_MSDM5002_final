@@ -2,7 +2,7 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:23:55 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-02 00:10:06
+ * @Last Modified time: 2021-11-02 16:31:22
  */
 #ifndef NODE_HPP
 #define NODE_HPP
@@ -16,9 +16,10 @@ private:
     int **game_board;
     
 public:
-    int visited_time;
-    int win_time;
+    double visited_time;
+    double win_time;
     bool is_completed;
+    int last_piece;
     std::list<Node*> children;
     std::pair<int, int> last_drop;
     Node();
@@ -27,6 +28,7 @@ public:
     Node* most_visited_child();
     ~Node();
     bool should_be_completed();
+    int get_piece(int, int);
 };
 
 //default constructor
@@ -38,6 +40,7 @@ Node::Node() : visited_time(0), win_time(0), game_board(NULL), is_completed(fals
         game_board[i] = new int[MAXN];
     }
     last_drop = std::pair<int, int> (-1, -1);
+    last_piece = 0;
 }
 
 //constrtor with a game board
@@ -51,6 +54,7 @@ Node::Node(int **game_board) : visited_time(0), win_time(0), is_completed(false)
         memcpy(this->game_board[i], game_board[i], sizeof(int) * MAXN);
     }
     last_drop = std::pair<int, int> (-1, -1);
+    last_piece = 0;
 }
 
 //copy constructor
@@ -67,6 +71,7 @@ Node::Node(Node &src)
     }
     this->last_drop = src.last_drop;
     this->is_completed = src.is_completed;
+    this->last_piece = src.last_piece;
 }
 
 //return the most visited child after search
@@ -85,6 +90,11 @@ Node* Node::most_visited_child()
         }
     }
     return most_node;
+}
+
+int Node::get_piece(int x, int y)
+{
+    return game_board[x][y];
 }
 
 //destructor
