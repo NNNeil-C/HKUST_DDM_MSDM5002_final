@@ -2,12 +2,13 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:19:04 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-02 18:44:39
+ * @Last Modified time: 2021-11-02 20:10:56
  */
 
 #include "node.hpp"
 #include <stack>
 #include <cmath>
+#include <vector>
 #include <algorithm>
 #define MAXN 8
 
@@ -26,7 +27,7 @@ private:
     bool check_win_diagnal(int [][MAXN], int, int, int);
     bool check_win_anti_diagnal(int [][MAXN], int, int, int);
     std::pair<int, int> find_random_valid_position(int [][MAXN]);
-
+    bool is_valid_position(int [][MAXN], int ,int);
     static int required_pieces;
 public:
     Mcst(int **game_board);
@@ -240,6 +241,50 @@ bool Mcst::check_win_anti_diagnal (int game_board[][MAXN], int which_piece, int 
         }
     }
     return true;
+}
+
+std::pair<int, int> Mcst::find_random_valid_position (int game_board[][MAXN])
+{
+    std::vector<std::pair<int, int > > valid_positions;
+    valid_positions.reserve(32);
+    for (int i = 0; i < MAXN; i ++)
+    {
+        for (int j = 0; j < MAXN; j ++)
+        {
+            if (is_valid_position(game_board, i, j))
+            {
+                valid_positions.push_back(std::make_pair(i, j));
+            }
+        }
+    }
+}
+
+bool Mcst::is_valid_position (int game_board[][MAXN], int x, int y)
+{
+    if (game_board[x][y] != 0)
+    {
+        return false;
+    }
+    for (int i = -1; i < 2; i ++)
+    {
+        for (int j = -1; j < 2; j ++)
+        {
+            if ((i == 0) && (j == 0))
+            {
+                continue;
+            }
+            int nx = x + i;
+            int ny = y + j;
+            if (nx > 0 && nx < MAXN && ny > 0 && ny < MAXN)
+            {
+                if (game_board[nx][ny] != 0)
+                {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
 }
 
 Mcst::~Mcst()
