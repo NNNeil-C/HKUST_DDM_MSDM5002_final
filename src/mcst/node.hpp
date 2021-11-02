@@ -13,11 +13,12 @@
 class Node
 {
 private:
-    int visited_time;
-    int win_time;
     int **game_board;
     
 public:
+    int visited_time;
+    int win_time;
+    bool is_completed;
     std::list<Node*> children;
     std::pair<int, int> last_drop;
     Node();
@@ -25,10 +26,11 @@ public:
     Node(int **);
     Node* most_visited_child();
     ~Node();
+    bool should_be_completed();
 };
 
 //default constructor
-Node::Node() : visited_time(0), win_time(0), game_board(NULL)
+Node::Node() : visited_time(0), win_time(0), game_board(NULL), is_completed(false)
 {
     game_board = new int*[MAXN];
     for (int i = 0; i <= MAXN; i ++)
@@ -39,7 +41,7 @@ Node::Node() : visited_time(0), win_time(0), game_board(NULL)
 }
 
 //constrtor with a game board
-Node::Node(int **game_board) : visited_time(0), win_time(0)
+Node::Node(int **game_board) : visited_time(0), win_time(0), is_completed(false)
 {
     this->game_board = new int*[MAXN];
     for (int i = 0; i <= MAXN; i ++)
@@ -56,15 +58,15 @@ Node::Node(Node &src)
 {
     this->visited_time = src.visited_time;
     this->win_time = src.win_time;
-    game_board = new int*[MAXN];
+    this->game_board = new int*[MAXN];
     for (int i = 0; i <= MAXN; i ++)
     {
-        game_board[i] = new int[MAXN];
+        this->game_board[i] = new int[MAXN];
         //copy from src node
-        memcpy(game_board[i], src.game_board[i], sizeof(int) * MAXN);
+        memcpy(this->game_board[i], src.game_board[i], sizeof(int) * MAXN);
     }
-    last_drop = src.last_drop;
-
+    this->last_drop = src.last_drop;
+    this->is_completed = src.is_completed;
 }
 
 //return the most visited child after search
