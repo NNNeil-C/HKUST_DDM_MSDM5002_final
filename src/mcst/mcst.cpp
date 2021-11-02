@@ -2,7 +2,7 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:19:04 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-02 17:03:42
+ * @Last Modified time: 2021-11-02 18:44:39
  */
 
 #include "node.hpp"
@@ -25,6 +25,8 @@ private:
     bool check_win_col(int [][MAXN], int, int, int);
     bool check_win_diagnal(int [][MAXN], int, int, int);
     bool check_win_anti_diagnal(int [][MAXN], int, int, int);
+    std::pair<int, int> find_random_valid_position(int [][MAXN]);
+
     static int required_pieces;
 public:
     Mcst(int **game_board);
@@ -131,7 +133,7 @@ double Mcst::do_simulation(Node *current_node)
     double result = 0;
     while (true)
     {
-        std::pair<int, int> next_position = find_random_vaild_position(game_board);
+        std::pair<int, int> next_position = find_random_valid_position(game_board);
         //if draw
         if (next_position.first == -1 && next_position.second == -1)
         {
@@ -188,6 +190,54 @@ bool Mcst::check_win_row (int game_board[][MAXN], int which_piece, int x, int y)
         {
             return false;
         }   
+    }
+    return true;
+}
+
+bool Mcst::check_win_col (int game_board[][MAXN], int which_piece, int x, int y)
+{
+    if (y + required_pieces > MAXN)
+    {
+        return false;
+    }
+    for (int j = y; j < y + required_pieces; j ++)
+    {
+        if (game_board[x][j] != which_piece)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool Mcst::check_win_diagnal (int game_board[][MAXN], int which_piece, int x, int y)
+{
+    if ((x + required_pieces > MAXN) || (y + required_pieces > MAXN))
+    {
+        return false;
+    }
+    for (int step = 0; step < required_pieces; step ++)
+    {
+        if (game_board[x+step][y+step] != which_piece)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool Mcst::check_win_anti_diagnal (int game_board[][MAXN], int which_piece, int x, int y)
+{
+    if ((x + required_pieces > MAXN) || (y - required_pieces < 0))
+    {
+        return false;
+    }
+    for (int step = 0; step < required_pieces; step ++)
+    {
+        if (game_board[x+step][y-step] != which_piece)
+        {
+            return false;
+        }
     }
     return true;
 }
