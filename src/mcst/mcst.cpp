@@ -2,13 +2,14 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:19:04 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-02 20:10:56
+ * @Last Modified time: 2021-11-02 21:27:57
  */
 
 #include "node.hpp"
 #include <stack>
 #include <cmath>
 #include <vector>
+#include <ctime>
 #include <algorithm>
 #define MAXN 8
 
@@ -42,6 +43,7 @@ Mcst::Mcst(int **game_board)
 {
     root = new Node(game_board);
     simulation_round = 0;
+    srand(time(NULL));
 }
 
 //single status query deduction
@@ -112,6 +114,7 @@ void Mcst::do_single_search()
     }
 }
 
+// Don't forget 'is_completed' and 'last_drop' and 'last_piece'
 Node* Mcst::expand (Node *currnet_node)
 {
 
@@ -159,6 +162,7 @@ double Mcst::do_simulation(Node *current_node)
     return result;
 }
 
+// if win in some way
 bool Mcst::check_win (int game_board[][MAXN], int which_piece)
 {
     for (int i = 0; i < MAXN; i ++)
@@ -179,6 +183,7 @@ bool Mcst::check_win (int game_board[][MAXN], int which_piece)
     return false;
 }
 
+//if win by row
 bool Mcst::check_win_row (int game_board[][MAXN], int which_piece, int x, int y)
 {
     if (x + required_pieces > MAXN)
@@ -195,6 +200,7 @@ bool Mcst::check_win_row (int game_board[][MAXN], int which_piece, int x, int y)
     return true;
 }
 
+//if win by column
 bool Mcst::check_win_col (int game_board[][MAXN], int which_piece, int x, int y)
 {
     if (y + required_pieces > MAXN)
@@ -211,6 +217,7 @@ bool Mcst::check_win_col (int game_board[][MAXN], int which_piece, int x, int y)
     return true;
 }
 
+// if win by diagnal
 bool Mcst::check_win_diagnal (int game_board[][MAXN], int which_piece, int x, int y)
 {
     if ((x + required_pieces > MAXN) || (y + required_pieces > MAXN))
@@ -227,6 +234,7 @@ bool Mcst::check_win_diagnal (int game_board[][MAXN], int which_piece, int x, in
     return true;
 }
 
+// if win by antidiagnal
 bool Mcst::check_win_anti_diagnal (int game_board[][MAXN], int which_piece, int x, int y)
 {
     if ((x + required_pieces > MAXN) || (y - required_pieces < 0))
@@ -247,27 +255,58 @@ std::pair<int, int> Mcst::find_random_valid_position (int game_board[][MAXN])
 {
     std::vector<std::pair<int, int > > valid_positions;
     valid_positions.reserve(32);
+    //if the game board is empty, all position is valid
+    bool is_empty_game_board = true;
     for (int i = 0; i < MAXN; i ++)
     {
+        if (!is_empty_game_board)
+        {
+            break;
+        }
         for (int j = 0; j < MAXN; j ++)
         {
-            if (is_valid_position(game_board, i, j))
+            if (game_board[i][j] != 0)
             {
-                valid_positions.push_back(std::make_pair(i, j));
+                is_empty_game_board = false;
+                break;
             }
         }
     }
+    //randomly pick one position on the game_board
+    if (is_empty_game_board)
+    {
+        int x = rand() % MAXN;
+        int y = rand() % MAXN;
+        return std::make_pair(x, y);
+    } else 
+    {
+        //find all valid position and randomly pick one
+        for (int i = 0; i < MAXN; i ++)
+        {
+            for (int j = 0; j < MAXN; j ++)
+            {
+                if (is_valid_position(game_board, i, j))
+                {
+                    valid_positions.push_back(std::make_pair(i, j));
+                }
+            }
+        }
+        int chosen_pair = rand() % valid_positions.size();
+        return valid_positions[chosen_pair];
+    }
+    return std::make_pair(-1, -1);
 }
 
+// a valid position: not ocuppied and has neighbor piece within a 4*4 matrix
 bool Mcst::is_valid_position (int game_board[][MAXN], int x, int y)
 {
     if (game_board[x][y] != 0)
     {
         return false;
     }
-    for (int i = -1; i < 2; i ++)
+    for (int i = -2; i < 3; i ++)
     {
-        for (int j = -1; j < 2; j ++)
+        for (int j = -2; j < 3; j ++)
         {
             if ((i == 0) && (j == 0))
             {
@@ -285,6 +324,13 @@ bool Mcst::is_valid_position (int game_board[][MAXN], int x, int y)
         }
     }
     return false;
+}
+
+double Mcst::get_node_uct_value(Node *current_node, double simlation_time, double c)
+{
+    double value = current_node->win_time / current_node->visited_time;
+    value += c * std::sqrt(std::log(simulation_round) / current_node->visited_time);
+    return value;
 }
 
 Mcst::~Mcst()
