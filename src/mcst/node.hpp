@@ -2,7 +2,7 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:23:55 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-02 21:43:14
+ * @Last Modified time: 2021-11-03 14:50:19
  */
 #ifndef NODE_HPP
 #define NODE_HPP
@@ -20,6 +20,7 @@ public:
     int last_piece;
     std::list<Node*> children;
     std::pair<int, int> last_drop;
+    std::list<std::pair<int, int> > possible_drop_positions;
     Node();
     Node(Node &);
     Node(int **);

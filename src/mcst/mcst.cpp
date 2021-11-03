@@ -2,7 +2,7 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:19:04 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-02 21:46:09
+ * @Last Modified time: 2021-11-03 15:17:40
  */
 
 #include "node.hpp"
@@ -42,6 +42,8 @@ int Mcst::required_pieces = 5;
 Mcst::Mcst(int **game_board)
 {
     root = new Node(game_board);
+    root->generate_all_possible_successive_drop();
+    root->is_completed = root->should_be_completed();
     simulation_round = 0;
     srand(time(NULL));
 }
@@ -111,16 +113,27 @@ void Mcst::do_single_search()
         dfs_stack.pop();
         current_node->visited_time += 1;
         current_node->win_time += is_win;
+        // is_completed should also handle in backpropagation
+        current_node->is_completed = current_node->should_be_completed();
     }
 }
 
-// Don't forget 'is_completed' and 'last_drop' and 'last_piece'
-// is_completed should also handle in backpropagation
-Node* Mcst::expand (Node *currnet_node)
+// how to identify each child node as different movement without repeat?
+Node* Mcst::expand (Node *current_node)
 {
-    Node *new_node = new Node(currnet_node->game_board);
-    currnet_node->children.push_back(new_node);
-    //tbd...
+    Node *new_node = new Node(current_node->game_board);
+    current_node->children.push_back(new_node);
+    //set last drop
+    new_node->last_drop = current_node->pop_one_possible_successive_drop();
+    //set last piece
+    //as oppsite to father node, if it's first drop of a game, drop a white piece(1)
+    new_node->last_piece = (current_node->last_piece != 0) ? -1 * current_node->last_piece : 1;
+    //drop last_piece on last_drop
+    new_node->game_board[new_node->last_drop.first][new_node->last_drop.second] = new_node->last_piece;
+    //generate all successive drop, and check if it's completed
+    new_node->generate_all_possible_successive_drop();
+    new_node->is_completed = new_node->should_be_completed();
+    return new_node;
 }
 
 double Mcst::do_simulation(Node *current_node)
@@ -141,16 +154,7 @@ double Mcst::do_simulation(Node *current_node)
     while (true)
     {
         std::pair<int, int> next_position = find_random_valid_position(game_board);
-        //if draw
-        if (next_position.first == -1 && next_position.second == -1)
-        {
-            result = 0.5;
-            break;
-        }
-        //drop a new piece
-        game_board[next_position.first][next_position.second] = next_piece;
-        next_piece = -1 * next_piece;
-
+        //if someone wins
         if (check_win(game_board, current_node->last_piece))
         {
             result = 1;
@@ -161,6 +165,15 @@ double Mcst::do_simulation(Node *current_node)
             result = 0;
             break;
         }
+        //if draw
+        if (next_position.first == -1 && next_position.second == -1)
+        {
+            result = 0.5;
+            break;
+        }
+        //drop a new piece
+        game_board[next_position.first][next_position.second] = next_piece;
+        next_piece = -1 * next_piece;
     }
     return result;
 }
