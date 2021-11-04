@@ -2,7 +2,7 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:19:04 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-03 15:17:40
+ * @Last Modified time: 2021-11-04 14:37:07
  */
 
 #include "node.hpp"
@@ -31,7 +31,7 @@ private:
     bool is_valid_position(int [][MAXN], int ,int);
     static int required_pieces;
 public:
-    Mcst(int **game_board);
+    Mcst(int **game_board, std::pair<int, int>, int);
     std::pair<int, int> deduction(time_t time_limit);
     ~Mcst();
 };
@@ -39,9 +39,11 @@ public:
 int Mcst::required_pieces = 5;
 
 //init with a certain game board
-Mcst::Mcst(int **game_board)
+Mcst::Mcst(int **game_board, std::pair<int, int> last_drop, int last_piece)
 {
     root = new Node(game_board);
+    root->last_drop = last_drop;
+    root->last_piece = last_piece;
     root->generate_all_possible_successive_drop();
     root->is_completed = root->should_be_completed();
     simulation_round = 0;
@@ -80,6 +82,10 @@ void Mcst::do_single_search()
     while (current_node != NULL)
     {
         dfs_stack.push(current_node);
+        if (current_node->children.size() < current_node->max_child_node_number)
+        {
+            break;
+        }
         std::list<Node*>::iterator it;
         double max_son_uct = 0;
         Node *max_son = NULL;
@@ -88,8 +94,8 @@ void Mcst::do_single_search()
         {
             Node *current_son = *it;
             double current_son_uct = get_node_uct_value(current_son, simulation_round);
-            // find the son with max uct and uncompleted
-            if (current_son_uct > max_son_uct && !current_son->is_completed)
+            // find the son with max uct 
+            if (current_son_uct > max_son_uct)
             {
                 current_son_uct = max_son_uct;
                 max_son = current_son;
@@ -106,6 +112,11 @@ void Mcst::do_single_search()
     //backpropagate
     new_node->visited_time += 1;
     new_node->win_time += is_win;
+    //if no expand
+    if (new_node == current_node)
+    {
+        dfs_stack.pop();
+    }
     while (!dfs_stack.empty())
     {
         is_win = 1 - is_win;
@@ -121,6 +132,11 @@ void Mcst::do_single_search()
 // how to identify each child node as different movement without repeat?
 Node* Mcst::expand (Node *current_node)
 {
+    //if the is_completed, it's no need to expand
+    if (current_node->is_completed)
+    {
+        return current_node;
+    }
     Node *new_node = new Node(current_node->game_board);
     current_node->children.push_back(new_node);
     //set last drop
@@ -349,7 +365,8 @@ bool Mcst::is_valid_position (int game_board[][MAXN], int x, int y)
 
 double Mcst::get_node_uct_value(Node *current_node, double simlation_time, double c)
 {
-    double value = current_node->win_time / current_node->visited_time;
+    double wins = current_node->visited_time - current_node->win_time;
+    double value = wins / current_node->visited_time;
     value += c * std::sqrt(std::log(simulation_round) / current_node->visited_time);
     return value;
 }
