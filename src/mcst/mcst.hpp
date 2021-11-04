@@ -2,9 +2,10 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:19:04 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-04 14:37:07
+ * @Last Modified time: 2021-11-04 16:04:09
  */
-
+#ifndef MCST_HPP
+#define MCST_HPP
 #include "node.hpp"
 #include <stack>
 #include <cmath>
@@ -22,17 +23,17 @@ private:
     double get_node_uct_value(Node *, double simlation_time, double c=std::sqrt(2));
     Node *expand(Node *);
     double do_simulation(Node *);
-    bool check_win(int game_board[][MAXN], int which_piece);
-    bool check_win_row(int [][MAXN], int, int, int);
-    bool check_win_col(int [][MAXN], int, int, int);
-    bool check_win_diagnal(int [][MAXN], int, int, int);
-    bool check_win_anti_diagnal(int [][MAXN], int, int, int);
     std::pair<int, int> find_random_valid_position(int [][MAXN]);
     bool is_valid_position(int [][MAXN], int ,int);
     static int required_pieces;
 public:
     Mcst(int **game_board, std::pair<int, int>, int);
     std::pair<int, int> deduction(time_t time_limit);
+    static bool check_win(int game_board[][MAXN], int which_piece);
+    static bool check_win_row(int [][MAXN], int, int, int);
+    static bool check_win_col(int [][MAXN], int, int, int);
+    static bool check_win_diagnal(int [][MAXN], int, int, int);
+    static bool check_win_anti_diagnal(int [][MAXN], int, int, int);
     ~Mcst();
 };
 
@@ -375,3 +376,4 @@ Mcst::~Mcst()
 {
     delete(root);
 }
+#endif
