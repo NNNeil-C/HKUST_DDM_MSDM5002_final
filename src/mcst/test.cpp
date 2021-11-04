@@ -2,7 +2,7 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-02 00:08:26 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-04 16:22:01
+ * @Last Modified time: 2021-11-04 16:36:45
  */
 #include <cstdlib>
 #include <ctime>
@@ -11,6 +11,23 @@
 #include "mcst.hpp"
 #define MAXN 8
 using namespace std;
+
+void print_board(int **board)
+{
+    cout << "start print game board" << endl;
+    for (int i = 0; i < MAXN; i ++)
+    {
+        for (int j = 0; j < MAXN; j ++)
+        {
+            int val = board[i][j];
+            val = (val < 0) ? 2 : val;
+            cout << val << ' ';
+        }
+        cout << endl;
+    }
+    cout << "end print game board" << endl;
+}
+
 int main ()
 {
     int **board;

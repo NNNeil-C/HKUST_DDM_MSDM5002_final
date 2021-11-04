@@ -2,7 +2,7 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:19:04 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-04 16:04:09
+ * @Last Modified time: 2021-11-04 16:33:34
  */
 #ifndef MCST_HPP
 #define MCST_HPP
@@ -23,17 +23,17 @@ private:
     double get_node_uct_value(Node *, double simlation_time, double c=std::sqrt(2));
     Node *expand(Node *);
     double do_simulation(Node *);
-    std::pair<int, int> find_random_valid_position(int [][MAXN]);
-    bool is_valid_position(int [][MAXN], int ,int);
+    std::pair<int, int> find_random_valid_position(int **);
+    bool is_valid_position(int **, int ,int);
     static int required_pieces;
 public:
     Mcst(int **game_board, std::pair<int, int>, int);
     std::pair<int, int> deduction(time_t time_limit);
-    static bool check_win(int game_board[][MAXN], int which_piece);
-    static bool check_win_row(int [][MAXN], int, int, int);
-    static bool check_win_col(int [][MAXN], int, int, int);
-    static bool check_win_diagnal(int [][MAXN], int, int, int);
-    static bool check_win_anti_diagnal(int [][MAXN], int, int, int);
+    static bool check_win(int **, int which_piece);
+    static bool check_win_row(int **, int, int, int);
+    static bool check_win_col(int **, int, int, int);
+    static bool check_win_diagnal(int **, int, int, int);
+    static bool check_win_anti_diagnal(int **, int, int, int);
     ~Mcst();
 };
 
@@ -157,7 +157,12 @@ double Mcst::do_simulation(Node *current_node)
 {
     //init
     int next_piece = -1 * current_node->last_piece;
-    int game_board[MAXN][MAXN];
+    int **game_board;
+    game_board = new int*[MAXN];
+    for (int i = 0; i <= MAXN; i ++)
+    {
+        game_board[i] = new int[MAXN]();
+    }
     //copy game board status
     for (int i = 0; i < MAXN; i ++)
     {
@@ -196,7 +201,7 @@ double Mcst::do_simulation(Node *current_node)
 }
 
 // if win in some way
-bool Mcst::check_win (int game_board[][MAXN], int which_piece)
+bool Mcst::check_win (int **game_board, int which_piece)
 {
     for (int i = 0; i < MAXN; i ++)
     {
@@ -217,7 +222,7 @@ bool Mcst::check_win (int game_board[][MAXN], int which_piece)
 }
 
 //if win by row
-bool Mcst::check_win_row (int game_board[][MAXN], int which_piece, int x, int y)
+bool Mcst::check_win_row (int **game_board, int which_piece, int x, int y)
 {
     if (x + required_pieces > MAXN)
     {
@@ -234,7 +239,7 @@ bool Mcst::check_win_row (int game_board[][MAXN], int which_piece, int x, int y)
 }
 
 //if win by column
-bool Mcst::check_win_col (int game_board[][MAXN], int which_piece, int x, int y)
+bool Mcst::check_win_col (int **game_board, int which_piece, int x, int y)
 {
     if (y + required_pieces > MAXN)
     {
@@ -251,7 +256,7 @@ bool Mcst::check_win_col (int game_board[][MAXN], int which_piece, int x, int y)
 }
 
 // if win by diagnal
-bool Mcst::check_win_diagnal (int game_board[][MAXN], int which_piece, int x, int y)
+bool Mcst::check_win_diagnal (int **game_board, int which_piece, int x, int y)
 {
     if ((x + required_pieces > MAXN) || (y + required_pieces > MAXN))
     {
@@ -268,7 +273,7 @@ bool Mcst::check_win_diagnal (int game_board[][MAXN], int which_piece, int x, in
 }
 
 // if win by antidiagnal
-bool Mcst::check_win_anti_diagnal (int game_board[][MAXN], int which_piece, int x, int y)
+bool Mcst::check_win_anti_diagnal (int **game_board, int which_piece, int x, int y)
 {
     if ((x + required_pieces > MAXN) || (y - required_pieces < 0))
     {
@@ -284,7 +289,7 @@ bool Mcst::check_win_anti_diagnal (int game_board[][MAXN], int which_piece, int 
     return true;
 }
 
-bool is_empty_game_board(int game_board[][MAXN])
+bool is_empty_game_board(int **game_board)
 {
     bool is_empty = true;
     for (int i = 0; i < MAXN; i ++)
@@ -305,7 +310,7 @@ bool is_empty_game_board(int game_board[][MAXN])
     return is_empty;
 }
 
-std::pair<int, int> Mcst::find_random_valid_position (int game_board[][MAXN])
+std::pair<int, int> Mcst::find_random_valid_position (int **game_board)
 {
     std::vector<std::pair<int, int > > valid_positions;
     valid_positions.reserve(32);
@@ -336,7 +341,7 @@ std::pair<int, int> Mcst::find_random_valid_position (int game_board[][MAXN])
 }
 
 // a valid position: not ocuppied and has neighbor piece within a 4*4 matrix
-bool Mcst::is_valid_position (int game_board[][MAXN], int x, int y)
+bool Mcst::is_valid_position (int **game_board, int x, int y)
 {
     if (game_board[x][y] != 0)
     {
