@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/GameUtils.hpp
+iostream
+-
+
 /Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/LogUtils.h
 cstdio
 -
@@ -17,6 +21,8 @@ node.hpp
 /Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/node.hpp
 LogUtils.h
 /Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/LogUtils.h
+GameUtils.hpp
+/Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/GameUtils.hpp
 stack
 -
 cmath
@@ -37,6 +43,8 @@ list
 -
 LogUtils.h
 /Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/LogUtils.h
+GameUtils.hpp
+/Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/GameUtils.hpp
 
 /Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/test.cpp
 cstdlib
@@ -51,4 +59,6 @@ mcst.hpp
 /Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/mcst.hpp
 LogUtils.h
 /Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/LogUtils.h
+GameUtils.hpp
+/Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/GameUtils.hpp
 

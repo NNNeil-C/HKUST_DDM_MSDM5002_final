@@ -10,25 +10,9 @@
 #include <iostream>
 #include "mcst.hpp"
 #include "LogUtils.h"
+#include "GameUtils.hpp"
 #define MAXN 8
 using namespace std;
-
-void print_board(int **board)
-{
-    LOGD("%s", "start to print game board");
-    cout << "start print game board" << endl;
-    for (int i = 0; i < MAXN; i ++)
-    {
-        for (int j = 0; j < MAXN; j ++)
-        {
-            int val = board[i][j];
-            val = (val < 0) ? 2 : val;
-            cout << val << ' ';
-        }
-        cout << endl;
-    }
-    cout << "end print game board" << endl;
-}
 
 int main ()
 {

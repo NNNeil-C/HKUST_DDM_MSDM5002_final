@@ -8,6 +8,7 @@
 #define MCST_HPP
 #include "node.hpp"
 #include "LogUtils.h"
+#include "GameUtils.hpp"
 #include <stack>
 #include <cmath>
 #include <vector>
@@ -25,7 +26,6 @@ private:
     Node *expand(Node *);
     double do_simulation(Node *);
     std::pair<int, int> *find_random_valid_position(int **);
-    bool is_valid_position(int **, int ,int);
     static int required_pieces;
 public:
     Mcst(int **game_board, std::pair<int, int>, int);
@@ -199,13 +199,6 @@ double Mcst::do_simulation(Node *current_node)
     std::pair<int, int> next_position(0, 0);
     while (true)
     {
-        LOGD("%s", "start to find random valid position");
-        std::pair<int, int> *suggested_position = find_random_valid_position(game_board);
-        next_position.first = suggested_position->first;
-        next_position.second = suggested_position->second;
-        delete(suggested_position);
-        LOGD("%s", "found random valid position");
-        LOGD("%s %d %d", "found random valid position", next_position.first, next_position.second);
         //if someone wins
         if (check_win(game_board, current_node->last_piece))
         {
@@ -223,6 +216,13 @@ double Mcst::do_simulation(Node *current_node)
             result = 0.5;
             break;
         }
+        LOGD("%s", "start to find random valid position");
+        std::pair<int, int> *suggested_position = find_random_valid_position(game_board);
+        next_position.first = suggested_position->first;
+        next_position.second = suggested_position->second;
+        delete(suggested_position);
+        LOGD("%s", "found random valid position");
+        LOGD("%s %d %d", "found random valid position", next_position.first, next_position.second);
         //drop a new piece
         game_board[next_position.first][next_position.second] = next_piece;
         next_piece = -1 * next_piece;
@@ -346,44 +346,18 @@ std::pair<int, int>* Mcst::find_random_valid_position (int **game_board)
             {
                 if (is_valid_position(game_board, i, j))
                 {
-                    valid_positions.push_back(std::make_pair(i, j));
+                    valid_positions.emplace_back(i, j);
                 }
             }
         }
         LOGD("%s %d", "valid_positions size:", valid_positions.size());
+        if (valid_positions.size() == 0) {
+            print_board(game_board);
+        }
         int chosen_pair = rand() % valid_positions.size();
         return new std::pair<int, int>(valid_positions[chosen_pair].first, valid_positions[chosen_pair].second);
     }
     return nullptr;
-}
-
-// a valid position: not ocuppied and has neighbor piece within a 4*4 matrix
-bool Mcst::is_valid_position (int **game_board, int x, int y)
-{
-    if (game_board[x][y] != 0)
-    {
-        return false;
-    }
-    for (int i = -2; i < 3; i ++)
-    {
-        for (int j = -2; j < 3; j ++)
-        {
-            if ((i == 0) && (j == 0))
-            {
-                continue;
-            }
-            int nx = x + i;
-            int ny = y + j;
-            if (nx > 0 && nx < MAXN && ny > 0 && ny < MAXN)
-            {
-                if (game_board[nx][ny] != 0)
-                {
-                    return true;
-                }
-            }
-        }
-    }
-    return false;
 }
 
 double Mcst::get_node_uct_value(Node *current_node, double simlation_time, double c)

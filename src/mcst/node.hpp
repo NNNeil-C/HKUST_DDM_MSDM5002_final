@@ -11,6 +11,7 @@
 #include <cstring>
 #include <list>
 #include "LogUtils.h"
+#include "GameUtils.hpp"
 
 class Node
 {
@@ -101,58 +102,6 @@ int Node::get_piece(int x, int y)
     return game_board[x][y];
 }
 
-// a valid position: not ocuppied and has neighbor piece within a 4*4 matrix
-bool is_valid_position (int **game_board, int x, int y)
-{
-    if (game_board[x][y] != 0)
-    {
-        return false;
-    }
-    for (int i = -2; i < 3; i ++)
-    {
-        for (int j = -2; j < 3; j ++)
-        {
-            if ((i == 0) && (j == 0))
-            {
-                continue;
-            }
-            int nx = x + i;
-            int ny = y + j;
-            if (nx > 0 && nx < MAXN && ny > 0 && ny < MAXN)
-            {
-                if (game_board[nx][ny] != 0)
-                {
-                    return true;
-                }
-            }
-        }
-    }
-    return false;
-}
-
-bool is_empty_game_board(int **game_board)
-{
-    LOGD("%s", "run in ");
-    bool is_empty = true;
-    for (int i = 0; i < MAXN; i ++)
-    {
-        if (!is_empty)
-        {
-            break;
-        }
-        for (int j = 0; j < MAXN; j ++)
-        {
-            if (game_board[i][j] != 0)
-            {
-                LOGD("%s %d %d %d", "occupied position", i, j, game_board[i][j]);
-                is_empty = false;
-                break;
-            }
-        }
-    }
-    return is_empty;
-}
-
 void Node::generate_all_possible_successive_drop()
 {
     if (is_empty_game_board(this->game_board))
@@ -173,7 +122,7 @@ void Node::generate_all_possible_successive_drop()
             {
                 if (is_valid_position(game_board, i, j))
                 {
-                    this->possible_drop_positions.push_back(std::make_pair(i, j));
+                    this->possible_drop_positions.emplace_back(i, j);
                 }
             }
         }
@@ -189,7 +138,7 @@ std::pair<int, int> Node::pop_one_possible_successive_drop()
         throw std::out_of_range ("pop_one_possible_successive_drop");
     }
     int random_one = rand() % possible_drop_positions.size();
-    std::list<std::pair<int, int> >::iterator it;
+    std::list<std::pair<int, int> >::iterator it = possible_drop_positions.begin();
     for (int i = 0; i < random_one; i ++)
     {
         it ++;

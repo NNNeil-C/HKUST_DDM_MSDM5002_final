@@ -4,6 +4,7 @@
 CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/hello.cpp.o: \
  ../src/mcst/hello.cpp
 CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/test.cpp.o: \
+ ../src/mcst/GameUtils.hpp \
  ../src/mcst/LogUtils.h \
  ../src/mcst/mcst.hpp \
  ../src/mcst/node.hpp \

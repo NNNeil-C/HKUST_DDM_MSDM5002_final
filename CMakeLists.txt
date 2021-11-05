@@ -10,4 +10,4 @@ add_executable(HKUST_DDM_MSDM5002_final
         src/mcst/hello.cpp
         src/mcst/mcst.hpp
         src/mcst/node.hpp
-        src/mcst/test.cpp src/mcst/LogUtils.h)
+        src/mcst/test.cpp src/mcst/LogUtils.h src/mcst/GameUtils.hpp)
