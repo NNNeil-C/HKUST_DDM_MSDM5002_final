@@ -27,6 +27,7 @@ private:
     double do_simulation(Node *);
     std::pair<int, int> *find_random_valid_position(int **);
     static int required_pieces;
+    static int time_buffer;
 public:
     Mcst(int **game_board, std::pair<int, int>, int);
     std::pair<int, int> deduction(time_t time_limit);
@@ -39,6 +40,7 @@ public:
 };
 
 int Mcst::required_pieces = 5;
+int Mcst::time_buffer = 100;
 
 //init with a certain game board
 Mcst::Mcst(int **game_board, std::pair<int, int> last_drop, int last_piece)
@@ -69,7 +71,7 @@ std::pair<int, int> Mcst::deduction(time_t time_limit)
         milliseconds current_time = duration_cast< milliseconds > (system_clock::now().time_since_epoch());
         duration<double> time_length = current_time - start_time;
         //time limit reached
-        if (time_length.count() * 1000 > time_limit - 500)
+        if (time_length.count() * 1000 > time_limit - time_buffer)
         {
             break;
         }

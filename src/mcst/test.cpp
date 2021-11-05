@@ -25,13 +25,13 @@ int main ()
     print_board(board);
     std::pair<int, int> last_drop(-1, -1);
     int last_piece = 0;
-    for (int round = 0; round < 20; round ++)
+    for (int round = 0; round < 64; round ++)
     {
         LOGD("%s : %d", "start round", round);
         LOGD("%s", "start to call msct()");
         Mcst mcst(board, last_drop, last_piece);
         LOGD("%s %d", "start to deduction, time limit", 1000);
-        std::pair<int, int> drop_on = mcst.deduction(1000);
+        std::pair<int, int> drop_on = mcst.deduction(5000);
         int x = drop_on.first;
         int y = drop_on.second;
         LOGD("%s %d %d", "ready to drop on ", x, y);
