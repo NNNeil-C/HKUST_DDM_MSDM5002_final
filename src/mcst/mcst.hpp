@@ -7,6 +7,7 @@
 #ifndef MCST_HPP
 #define MCST_HPP
 #include "node.hpp"
+#include "LogUtils.h"
 #include <stack>
 #include <cmath>
 #include <vector>
@@ -23,7 +24,7 @@ private:
     double get_node_uct_value(Node *, double simlation_time, double c=std::sqrt(2));
     Node *expand(Node *);
     double do_simulation(Node *);
-    std::pair<int, int> find_random_valid_position(int **);
+    std::pair<int, int> *find_random_valid_position(int **);
     bool is_valid_position(int **, int ,int);
     static int required_pieces;
 public:
@@ -42,7 +43,9 @@ int Mcst::required_pieces = 5;
 //init with a certain game board
 Mcst::Mcst(int **game_board, std::pair<int, int> last_drop, int last_piece)
 {
+    LOGD("%s", "mcst()");
     root = new Node(game_board);
+    LOGD("%s", "created root");
     root->last_drop = last_drop;
     root->last_piece = last_piece;
     root->generate_all_possible_successive_drop();
@@ -55,27 +58,39 @@ Mcst::Mcst(int **game_board, std::pair<int, int> last_drop, int last_piece)
 std::pair<int, int> Mcst::deduction(time_t time_limit)
 {
     using namespace std::chrono;
+    LOGD("%s", "starting deducting");
     milliseconds start_time = duration_cast< milliseconds > (system_clock::now().time_since_epoch());
     while (true)
     {
         //execute single round search
+        LOGD("%s", "ready to do single search");
         do_single_search();
+        LOGD("%s", "finish doing single search");
         milliseconds current_time = duration_cast< milliseconds > (system_clock::now().time_since_epoch());
         duration<double> time_length = current_time - start_time;
         //time limit reached
-        if (time_length.count() > time_limit - 500)
+        if (time_length.count() * 1000 > time_limit - 500)
         {
             break;
         }
     }
     // the most visited node is the recommendation
+    LOGD("%s", "ready to get most visited childe");
     Node* chosen_node = root->most_visited_child();
+    if (chosen_node == nullptr)
+    {
+        LOGD("%s", "most visited child is null");
+    } else{
+        LOGD("%s", "got most visited child");
+    }
+    LOGD("%s %d %d", "the chosen drop is ", chosen_node->last_drop.first, chosen_node->last_drop.second);
     return chosen_node->last_drop;
 }
 
 void Mcst::do_single_search()
 {
     simulation_round ++;
+    LOGD("%s %d", "start single search, round", simulation_round);
     std::stack<Node *> dfs_stack;
     Node *current_node = root;
     //select
@@ -104,12 +119,15 @@ void Mcst::do_single_search()
         }
         current_node = max_son;
     }
+    LOGD("%s", "finish selection");
 
     //expand
     current_node = dfs_stack.top();
     Node *new_node = expand(current_node);
+    LOGD("%s", "finish expansion");
     //simluate 1 for win, 0.5 for draw, 0 for lose
     double is_win = do_simulation(new_node);
+    LOGD("%s", "finish simulation");
     //backpropagate
     new_node->visited_time += 1;
     new_node->win_time += is_win;
@@ -128,6 +146,7 @@ void Mcst::do_single_search()
         // is_completed should also handle in backpropagation
         current_node->is_completed = current_node->should_be_completed();
     }
+    LOGD("%s", "finish backpropagation");
 }
 
 // how to identify each child node as different movement without repeat?
@@ -136,11 +155,13 @@ Node* Mcst::expand (Node *current_node)
     //if the is_completed, it's no need to expand
     if (current_node->is_completed)
     {
+        LOGD("%s", "not expand");
         return current_node;
     }
     Node *new_node = new Node(current_node->game_board);
     current_node->children.push_back(new_node);
-    //set last drop
+    LOGD("%s", "added child node");
+    //set last dropÍ
     new_node->last_drop = current_node->pop_one_possible_successive_drop();
     //set last piece
     //as oppsite to father node, if it's first drop of a game, drop a white piece(1)
@@ -156,6 +177,7 @@ Node* Mcst::expand (Node *current_node)
 double Mcst::do_simulation(Node *current_node)
 {
     //init
+    LOGD("%s", "init for doing simulation");
     int next_piece = -1 * current_node->last_piece;
     int **game_board;
     game_board = new int*[MAXN];
@@ -173,9 +195,17 @@ double Mcst::do_simulation(Node *current_node)
     }
     //drop alternatively
     double result = 0;
+    LOGD("%s", "start dropping");
+    std::pair<int, int> next_position(0, 0);
     while (true)
     {
-        std::pair<int, int> next_position = find_random_valid_position(game_board);
+        LOGD("%s", "start to find random valid position");
+        std::pair<int, int> *suggested_position = find_random_valid_position(game_board);
+        next_position.first = suggested_position->first;
+        next_position.second = suggested_position->second;
+        delete(suggested_position);
+        LOGD("%s", "found random valid position");
+        LOGD("%s %d %d", "found random valid position", next_position.first, next_position.second);
         //if someone wins
         if (check_win(game_board, current_node->last_piece))
         {
@@ -289,40 +319,26 @@ bool Mcst::check_win_anti_diagnal (int **game_board, int which_piece, int x, int
     return true;
 }
 
-bool is_empty_game_board(int **game_board)
+std::pair<int, int>* Mcst::find_random_valid_position (int **game_board)
 {
-    bool is_empty = true;
-    for (int i = 0; i < MAXN; i ++)
-    {
-        if (!is_empty)
-        {
-            break;
-        }
-        for (int j = 0; j < MAXN; j ++)
-        {
-            if (game_board[i][j] != 0)
-            {
-                is_empty = false;
-                break;
-            }
-        }
-    }
-    return is_empty;
-}
-
-std::pair<int, int> Mcst::find_random_valid_position (int **game_board)
-{
+    LOGD("%s", "run in");
     std::vector<std::pair<int, int > > valid_positions;
-    valid_positions.reserve(32);
+    //reserve cause segment fault, why?
+    //valid_positions.reserve(32);
     //if the game board is empty, all position is valid
     //randomly pick one position on the game_board
     if (is_empty_game_board(game_board))
     {
+        LOGD("%s", "empty game board");
         int x = rand() % MAXN;
         int y = rand() % MAXN;
-        return std::make_pair(x, y);
+        LOGD("%s %d %d", "game board is empty, randomly choose", x, y);
+        auto *result = new std::pair<int, int>(x, y);
+        LOGD("%s", "set result");
+        return result;
     } else 
     {
+        LOGD("%s", "common game board");
         //find all valid position and randomly pick one
         for (int i = 0; i < MAXN; i ++)
         {
@@ -334,10 +350,11 @@ std::pair<int, int> Mcst::find_random_valid_position (int **game_board)
                 }
             }
         }
+        LOGD("%s %d", "valid_positions size:", valid_positions.size());
         int chosen_pair = rand() % valid_positions.size();
-        return valid_positions[chosen_pair];
+        return new std::pair<int, int>(valid_positions[chosen_pair].first, valid_positions[chosen_pair].second);
     }
-    return std::make_pair(-1, -1);
+    return nullptr;
 }
 
 // a valid position: not ocuppied and has neighbor piece within a 4*4 matrix

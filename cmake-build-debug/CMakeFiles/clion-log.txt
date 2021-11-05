@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/cmake-build-debug

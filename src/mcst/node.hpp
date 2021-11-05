@@ -2,7 +2,7 @@
  * @Author: Neil.Chen Zifeng 
  * @Date: 2021-11-01 21:23:55 
  * @Last Modified by: Neil.Chen Zifeng
- * @Last Modified time: 2021-11-04 15:20:37
+ * @Last Modified time: 2021-11-04 20:27:12
  */
 #ifndef NODE_HPP
 #define NODE_HPP
@@ -10,6 +10,8 @@
 #include <cstdlib>
 #include <cstring>
 #include <list>
+#include "LogUtils.h"
+
 class Node
 {
 public:
@@ -49,7 +51,7 @@ Node::Node() : visited_time(0), win_time(0), game_board(NULL), is_completed(fals
 Node::Node(int **game_board) : visited_time(0), win_time(0), is_completed(false)
 {
     this->game_board = new int*[MAXN];
-    for (int i = 0; i <= MAXN; i ++)
+    for (int i = 0; i < MAXN; i ++)
     {
         this->game_board[i] = new int[MAXN];
         //copy from src node
@@ -128,19 +130,55 @@ bool is_valid_position (int **game_board, int x, int y)
     return false;
 }
 
-void Node::generate_all_possible_successive_drop()
+bool is_empty_game_board(int **game_board)
 {
-    //find all valid position and randomly pick one
+    LOGD("%s", "run in ");
+    bool is_empty = true;
     for (int i = 0; i < MAXN; i ++)
     {
+        if (!is_empty)
+        {
+            break;
+        }
         for (int j = 0; j < MAXN; j ++)
         {
-            if (is_valid_position(game_board, i, j))
+            if (game_board[i][j] != 0)
             {
-                this->possible_drop_positions.push_back(std::make_pair(i, j));
+                LOGD("%s %d %d %d", "occupied position", i, j, game_board[i][j]);
+                is_empty = false;
+                break;
             }
         }
     }
+    return is_empty;
+}
+
+void Node::generate_all_possible_successive_drop()
+{
+    if (is_empty_game_board(this->game_board))
+    {
+        for (int i = 0; i < MAXN; i ++)
+        {
+            for (int j = 0; j < MAXN; j ++)
+            {
+                    this->possible_drop_positions.push_back(std::make_pair(i, j));
+            }
+        }
+    } else
+    {
+        //find all valid position and randomly pick one
+        for (int i = 0; i < MAXN; i ++)
+        {
+            for (int j = 0; j < MAXN; j ++)
+            {
+                if (is_valid_position(game_board, i, j))
+                {
+                    this->possible_drop_positions.push_back(std::make_pair(i, j));
+                }
+            }
+        }
+    }
+
     this->max_child_node_number = this->possible_drop_positions.size();
 }
 
@@ -158,6 +196,19 @@ std::pair<int, int> Node::pop_one_possible_successive_drop()
     }
     std::pair<int, int> result((*it).first, (*it).second);
     possible_drop_positions.erase(it);
+    return result;
+}
+
+bool Node::should_be_completed()
+{
+    // not try every child node
+    if (this->children.size() < this->max_child_node_number) {
+        return false;
+    }
+    bool result = true;
+    for_each(this->children.begin(), this->children.end(), [&result](Node *node){
+        result |= node->is_completed;
+    });
     return result;
 }
 
