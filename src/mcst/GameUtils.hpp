@@ -29,6 +29,28 @@ bool is_empty_game_board(int **game_board)
     return is_empty;
 }
 
+bool is_full_game_board(int **game_board)
+{
+    LOGD("%s", "run in ");
+    bool is_full = true;
+    for (int i = 0; i < MAXN; i ++)
+    {
+        if (!is_full)
+        {
+            break;
+        }
+        for (int j = 0; j < MAXN; j ++)
+        {
+            if (game_board[i][j] == 0)
+            {
+                is_full = false;
+                break;
+            }
+        }
+    }
+    return is_full;
+}
+
 void print_board(int **board)
 {
     LOGD("%s", "start to print game board");

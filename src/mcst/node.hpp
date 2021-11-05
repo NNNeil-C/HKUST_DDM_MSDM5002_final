@@ -169,7 +169,7 @@ Node::~Node()
     {
         delete(*it);
     }
-    for (int i = 0; i <= MAXN; i ++)
+    for (int i = 0; i < MAXN; i ++)
     {
         delete(game_board[i]);
     }

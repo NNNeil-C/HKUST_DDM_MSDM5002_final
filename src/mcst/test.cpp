@@ -25,7 +25,7 @@ int main ()
     print_board(board);
     std::pair<int, int> last_drop(-1, -1);
     int last_piece = 0;
-    for (int round = 0; round < 10; round ++)
+    for (int round = 0; round < 20; round ++)
     {
         LOGD("%s : %d", "start round", round);
         LOGD("%s", "start to call msct()");
@@ -40,6 +40,11 @@ int main ()
         last_piece = (last_piece == 0) ? 1 : -1 * last_piece;
         board[x][y] = last_piece;
         print_board(board);
-        Mcst::check_win(board, last_piece);
+        LOGD("%s", "reday to check win");
+        if (Mcst::check_win(board, last_piece))
+        {
+            break;
+        }
     }
+    print_board(board);
 }

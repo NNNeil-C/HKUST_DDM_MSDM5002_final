@@ -211,7 +211,7 @@ double Mcst::do_simulation(Node *current_node)
             break;
         }
         //if draw
-        if (next_position.first == -1 && next_position.second == -1)
+        if (is_full_game_board(game_board))
         {
             result = 0.5;
             break;
@@ -254,7 +254,8 @@ bool Mcst::check_win (int **game_board, int which_piece)
 //if win by row
 bool Mcst::check_win_row (int **game_board, int which_piece, int x, int y)
 {
-    if (x + required_pieces > MAXN)
+    LOGD("%s", "run in");
+    if (x + required_pieces >= MAXN)
     {
         return false;
     }
@@ -271,7 +272,8 @@ bool Mcst::check_win_row (int **game_board, int which_piece, int x, int y)
 //if win by column
 bool Mcst::check_win_col (int **game_board, int which_piece, int x, int y)
 {
-    if (y + required_pieces > MAXN)
+    LOGD("%s", "run in");
+    if (y + required_pieces >= MAXN)
     {
         return false;
     }
@@ -288,7 +290,8 @@ bool Mcst::check_win_col (int **game_board, int which_piece, int x, int y)
 // if win by diagnal
 bool Mcst::check_win_diagnal (int **game_board, int which_piece, int x, int y)
 {
-    if ((x + required_pieces > MAXN) || (y + required_pieces > MAXN))
+    LOGD("%s", "run in");
+    if ((x + required_pieces >= MAXN) || (y + required_pieces >= MAXN))
     {
         return false;
     }
@@ -305,8 +308,10 @@ bool Mcst::check_win_diagnal (int **game_board, int which_piece, int x, int y)
 // if win by antidiagnal
 bool Mcst::check_win_anti_diagnal (int **game_board, int which_piece, int x, int y)
 {
-    if ((x + required_pieces > MAXN) || (y - required_pieces < 0))
+    LOGD("%s", "run in");
+    if ((x + required_pieces >= MAXN) || (y - required_pieces < 0))
     {
+        LOGD("%s", "run out");
         return false;
     }
     for (int step = 0; step < required_pieces; step ++)
@@ -316,6 +321,7 @@ bool Mcst::check_win_anti_diagnal (int **game_board, int which_piece, int x, int
             return false;
         }
     }
+    LOGD("%s", "run out");
     return true;
 }
 
@@ -353,6 +359,7 @@ std::pair<int, int>* Mcst::find_random_valid_position (int **game_board)
         LOGD("%s %d", "valid_positions size:", valid_positions.size());
         if (valid_positions.size() == 0) {
             print_board(game_board);
+            return new std::pair<int, int>(-1, -1);
         }
         int chosen_pair = rand() % valid_positions.size();
         return new std::pair<int, int>(valid_positions[chosen_pair].first, valid_positions[chosen_pair].second);
