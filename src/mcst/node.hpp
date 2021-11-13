@@ -6,7 +6,6 @@
  */
 #ifndef NODE_HPP
 #define NODE_HPP
-#define MAXN 8
 #include <cstdlib>
 #include <cstring>
 #include <list>
@@ -21,35 +20,36 @@ public:
     double win_time;
     bool is_completed;
     int last_piece;
-    int max_child_node_number;
+    unsigned int max_child_node_number{};
     std::list<Node*> children;
     std::pair<int, int> last_drop;
     std::list<std::pair<int, int> > possible_drop_positions;
     Node();
-    Node(Node &);
-    Node(int **);
-    Node* most_visited_child();
+    explicit Node(int **);
+    Node* most_visited_child() const;
     ~Node();
-    bool should_be_completed();
-    int get_piece(int, int);
+    bool should_be_completed() const;
+    int get_piece(int, int) const;
     void generate_all_possible_successive_drop();
     std::pair<int, int> pop_one_possible_successive_drop();
+    Node(const Node &) = delete;
+    Node& operator=(const Node &) = delete;
 };
 
 //default constructor
-Node::Node() : visited_time(0), win_time(0), game_board(NULL), is_completed(false)
+Node::Node() : visited_time(0), win_time(0), game_board(nullptr), is_completed(false), max_child_node_number(0)
 {
     game_board = new int*[MAXN];
     for (int i = 0; i <= MAXN; i ++)
     {
-        game_board[i] = new int[MAXN];
+        game_board[i] = new int[MAXN]{0};
     }
     last_drop = std::pair<int, int> (-1, -1);
     last_piece = 0;
 }
 
-//constrtor with a game board
-Node::Node(int **game_board) : visited_time(0), win_time(0), is_completed(false)
+//constructor with a game board
+Node::Node(int **game_board) : visited_time(0), win_time(0), is_completed(false), max_child_node_number(0)
 {
     this->game_board = new int*[MAXN];
     for (int i = 0; i < MAXN; i ++)
@@ -62,32 +62,13 @@ Node::Node(int **game_board) : visited_time(0), win_time(0), is_completed(false)
     last_piece = 0;
 }
 
-//copy constructor
-Node::Node(Node &src)
-{
-    this->visited_time = src.visited_time;
-    this->win_time = src.win_time;
-    this->game_board = new int*[MAXN];
-    for (int i = 0; i <= MAXN; i ++)
-    {
-        this->game_board[i] = new int[MAXN];
-        //copy from src node
-        memcpy(this->game_board[i], src.game_board[i], sizeof(int) * MAXN);
-    }
-    this->last_drop = src.last_drop;
-    this->is_completed = src.is_completed;
-    this->last_piece = src.last_piece;
-}
-
 //return the most visited child after search
-Node* Node::most_visited_child()
+Node* Node::most_visited_child() const
 {
-    std::list<Node*>::iterator it;
-    int most_time = 0;
-    Node *most_node = NULL;
-    for (it = children.begin(); it != children.end(); it ++)
+    double most_time = 0;
+    Node *most_node = nullptr;
+    for (auto current : children)
     {
-        Node *current = *it;
         if (most_time < current->visited_time)
         {
             most_time = current->visited_time;
@@ -97,7 +78,7 @@ Node* Node::most_visited_child()
     return most_node;
 }
 
-int Node::get_piece(int x, int y)
+int Node::get_piece(int x, int y) const
 {
     return game_board[x][y];
 }
@@ -110,19 +91,19 @@ void Node::generate_all_possible_successive_drop()
         {
             for (int j = 0; j < MAXN; j ++)
             {
-                    this->possible_drop_positions.push_back(std::make_pair(i, j));
+                    this->possible_drop_positions.emplace_back(std::make_pair(i, j));
             }
         }
     } else
     {
-        //find all valid position and randomly pick one
+        //find all valid position
         for (int i = 0; i < MAXN; i ++)
         {
             for (int j = 0; j < MAXN; j ++)
             {
                 if (is_valid_position(game_board, i, j))
                 {
-                    this->possible_drop_positions.emplace_back(i, j);
+                    this->possible_drop_positions.emplace_back(std::make_pair(i, j));
                 }
             }
         }
@@ -133,12 +114,12 @@ void Node::generate_all_possible_successive_drop()
 
 std::pair<int, int> Node::pop_one_possible_successive_drop()
 {
-    if (possible_drop_positions.size() <= 0)
+    if (possible_drop_positions.empty())
     {
         throw std::out_of_range ("pop_one_possible_successive_drop");
     }
-    int random_one = rand() % possible_drop_positions.size();
-    std::list<std::pair<int, int> >::iterator it = possible_drop_positions.begin();
+    unsigned int random_one = random() % possible_drop_positions.size();
+    auto it = possible_drop_positions.begin();
     for (int i = 0; i < random_one; i ++)
     {
         it ++;
@@ -148,15 +129,16 @@ std::pair<int, int> Node::pop_one_possible_successive_drop()
     return result;
 }
 
-bool Node::should_be_completed()
+bool Node::should_be_completed() const
 {
     // not try every child node
     if (this->children.size() < this->max_child_node_number) {
         return false;
     }
     bool result = true;
+    // if every child is completed, then the father node is also completed
     for_each(this->children.begin(), this->children.end(), [&result](Node *node){
-        result |= node->is_completed;
+        result &= node->is_completed;
     });
     return result;
 }

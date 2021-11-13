@@ -41,8 +41,9 @@ int main ()
         board[x][y] = last_piece;
         print_board(board);
         LOGD("%s", "reday to check win");
-        if (Mcst::check_win(board, last_piece))
+        if (check_win(board, last_piece))
         {
+            cout << last_piece << " wins." << endl;
             break;
         }
     }

@@ -86,6 +86,15 @@
 		<Unit filename="/Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/LogUtils.h">
 			<Option target="HKUST_DDM_MSDM5002_final"/>
 		</Unit>
+		<Unit filename="/Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/exceptions/CustomBaseException.hpp">
+			<Option target="HKUST_DDM_MSDM5002_final"/>
+		</Unit>
+		<Unit filename="/Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/exceptions/NoMostVisitedNodeException.hpp">
+			<Option target="HKUST_DDM_MSDM5002_final"/>
+		</Unit>
+		<Unit filename="/Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/exceptions/NullPointerExceptions.hpp">
+			<Option target="HKUST_DDM_MSDM5002_final"/>
+		</Unit>
 		<Unit filename="/Users/chenzifeng/Workspace/5002/final_project/HKUST_DDM_MSDM5002_final/src/mcst/hello.cpp">
 			<Option target="HKUST_DDM_MSDM5002_final"/>
 		</Unit>

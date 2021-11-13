@@ -12,4 +12,5 @@ void hello() {
     time_t now = time(0);
     char* dt = ctime(&now);
     cout << "hello, it's " << dt << endl;
+    cout << time(nullptr) << endl;
 }

@@ -6,6 +6,11 @@
 #define HKUST_DDM_MSDM5002_FINAL_GAMEUTILS_HPP
 
 #include <iostream>
+#include "exceptions/CustomBaseException.hpp"
+const unsigned int MAXN = 8;
+const unsigned int REQUIRED_PIECES = 5;
+
+
 
 bool is_empty_game_board(int **game_board)
 {
@@ -68,7 +73,194 @@ void print_board(int **board)
     std::cout << "end print game board" << std::endl;
 }
 
-// a valid position: not ocuppied and has neighbor piece within a 4*4 matrix
+//if win by row
+bool check_win_row (int **game_board, int which_piece, int x, int y)
+{
+    LOGD("%s", "run in");
+    if (x + REQUIRED_PIECES > MAXN)
+    {
+        return false;
+    }
+    for (int i = x; i < x + REQUIRED_PIECES; i ++)
+    {
+        if (game_board[i][y] != which_piece)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+//if win by column
+bool check_win_col (int **game_board, int which_piece, int x, int y)
+{
+    LOGD("%s", "run in");
+    if (y + REQUIRED_PIECES > MAXN)
+    {
+        return false;
+    }
+    for (int j = y; j < y + REQUIRED_PIECES; j ++)
+    {
+        if (game_board[x][j] != which_piece)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+// if win by diagnal
+bool check_win_diagonal (int **game_board, int which_piece, int x, int y)
+{
+    LOGD("%s", "run in");
+    if ((x + REQUIRED_PIECES > MAXN) || (y + REQUIRED_PIECES > MAXN))
+    {
+        return false;
+    }
+    for (int step = 0; step < REQUIRED_PIECES; step ++)
+    {
+        if (game_board[x+step][y+step] != which_piece)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+// if win by antidiagnal
+bool check_win_anti_diagonal (int **game_board, int which_piece, int x, int y)
+{
+    LOGD("%s", "run in");
+    if ((x + REQUIRED_PIECES > MAXN) || (y - REQUIRED_PIECES < -1))
+    {
+        LOGD("%s", "run out");
+        return false;
+    }
+    for (int step = 0; step < REQUIRED_PIECES; step ++)
+    {
+        if (game_board[x+step][y-step] != which_piece)
+        {
+            return false;
+        }
+    }
+    LOGD("%s", "run out");
+    return true;
+}
+
+// if win in some way
+bool check_win (int **game_board, int which_piece)
+{
+    for (int i = 0; i < MAXN; i ++)
+    {
+        for (int j = 0; j < MAXN; j ++)
+        {
+            bool win_flag = false;
+            win_flag |= check_win_row(game_board, which_piece, i, j);
+            win_flag |= check_win_col(game_board, which_piece, i, j);
+            win_flag |= check_win_diagonal(game_board, which_piece, i, j);
+            win_flag |= check_win_anti_diagonal(game_board, which_piece, i, j);
+            if (win_flag)
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool in_board(int x, int y)
+{
+    return x >= 0 && x < MAXN && y >= 0 && y < MAXN;
+}
+
+bool quick_check_win_row(int **game_board, int piece, int x, int y)
+{
+    int number = 1;
+    for (int u = x, v = y; in_board(u, v - 1) && (game_board[u][v - 1] == piece); v --)
+    {
+        number ++;
+    }
+    for (int u = x, v = y; in_board(u, v + 1) && (game_board[u][v + 1] == piece); v ++)
+    {
+        number ++;
+    }
+    return number >= REQUIRED_PIECES;
+}
+
+bool quick_check_win_col(int **game_board, int piece, int x, int y)
+{
+    int number = 1;
+    for (int u = x, v = y; in_board(u - 1, v) && (game_board[u - 1][v] == piece); u --)
+    {
+        number ++;
+    }
+    for (int u = x, v = y; in_board(u + 1, v) && (game_board[u + 1][v] == piece); u ++)
+    {
+        number ++;
+    }
+    return number >= REQUIRED_PIECES;
+}
+
+bool quick_check_win_diag(int **game_board, int piece, int x, int y)
+{
+    int number = 1;
+    for (int u = x, v = y; in_board(u - 1, v - 1) && (game_board[u - 1][v - 1] == piece); u --, v --)
+    {
+        number ++;
+    }
+    for (int u = x, v = y; in_board(u + 1, v + 1) && (game_board[u + 1][v + 1] == piece); u ++, v ++)
+    {
+        number ++;
+    }
+    return number >= REQUIRED_PIECES;
+}
+
+bool quick_check_win_anti_diag(int **game_board, int piece, int x, int y)
+{
+    int number = 1;
+    for (int u = x, v = y; in_board(u - 1, v + 1) && (game_board[u - 1][v + 1] == piece); u --, v ++)
+    {
+        number ++;
+    }
+    for (int u = x, v = y; in_board(u + 1, v - 1) && (game_board[u + 1][v - 1] == piece); u ++, v --)
+    {
+        number ++;
+    }
+    return number >= REQUIRED_PIECES;
+}
+
+// judge by the last drop
+bool quick_check_win(int **game_board, std::pair<int, int> position) {
+    int x = position.first;
+    int y = position.second;
+    int piece = game_board[x][y];
+    if (piece == 0) {
+        throw CustomBaseException("call quick check with a 0 piece");
+    }
+    //row
+    if (quick_check_win_row(game_board, piece, x, y))
+    {
+        return true;
+    }
+    //col
+    if (quick_check_win_row(game_board, piece, x, y))
+    {
+        return true;
+    }
+    //diagonal
+    if (quick_check_win_diag(game_board, piece, x, y))
+    {
+        return true;
+    }
+    //anti diagonal
+    if (quick_check_win_anti_diag(game_board, piece, x, y))
+    {
+        return true;
+    }
+    return false;
+}
+
+// a valid position: not occupied and has neighbor piece within a 4*4 matrix
 bool is_valid_position (int **game_board, int x, int y)
 {
     if (game_board[x][y] != 0)

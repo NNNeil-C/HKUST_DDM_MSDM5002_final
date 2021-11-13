@@ -7,7 +7,7 @@
 #include <cstdio>
 #include <string>
 
-#define DEBUG
+//#define DEBUG
 
 #define __FILENAME__ (strrchr(__FILE__, '/') + 1)
 
