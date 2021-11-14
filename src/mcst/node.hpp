@@ -153,9 +153,9 @@ Node::~Node()
     }
     for (int i = 0; i < MAXN; i ++)
     {
-        delete(game_board[i]);
+        delete [] game_board[i];
     }
-    delete(game_board);
+    delete [] game_board;
 }
 
 #endif

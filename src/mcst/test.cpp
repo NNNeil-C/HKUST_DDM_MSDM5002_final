@@ -4,8 +4,6 @@
  * @Last Modified by: Neil.Chen Zifeng
  * @Last Modified time: 2021-11-04 19:30:57
  */
-#include <cstdlib>
-#include <ctime>
 #include <algorithm>
 #include <iostream>
 #include "mcst.hpp"
@@ -25,7 +23,8 @@ int main ()
     print_board(board);
     std::pair<int, int> last_drop(-1, -1);
     int last_piece = 0;
-    for (int round = 0; round < 64; round ++)
+
+    for (int round = 0; round < 10; round ++)
     {
         LOGD("%s : %d", "start round", round);
         LOGD("%s", "start to call msct()");
@@ -48,4 +47,5 @@ int main ()
         }
     }
     print_board(board);
+    recycle_game_board(board);
 }

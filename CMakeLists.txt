@@ -3,6 +3,7 @@ project(HKUST_DDM_MSDM5002_final)
 
 set(CMAKE_CXX_STANDARD 14)
 #set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g")
 
 include_directories(src/mcst)
 

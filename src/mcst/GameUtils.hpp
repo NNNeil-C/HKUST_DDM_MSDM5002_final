@@ -289,4 +289,13 @@ bool is_valid_position (int **game_board, int x, int y)
     return false;
 }
 
+bool recycle_game_board(int ** board)
+{
+    for (int i = 0; i < MAXN; i ++)
+    {
+        delete [] board[i];
+    }
+    delete [] board;
+}
+
 #endif //HKUST_DDM_MSDM5002_FINAL_GAMEUTILS_HPP

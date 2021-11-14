@@ -27,7 +27,6 @@ private:
     static Node *expand(Node *);
     static double do_simulation(const Node *) ;
     static std::pair<int, int> find_random_valid_position(int **);
-    static int required_pieces;
     static int time_buffer;
 public:
     Mcst(int **game_board, std::pair<int, int>, int);
@@ -35,7 +34,6 @@ public:
     ~Mcst();
 };
 
-int Mcst::required_pieces = 5;
 int Mcst::time_buffer = 100;
 
 //init with a certain game board
@@ -208,6 +206,7 @@ double Mcst::do_simulation(const Node *current_node)
         next_piece = -1 * next_piece;
         result = 1 - result;
     }
+    recycle_game_board(game_board);
     return result;
 }
 
