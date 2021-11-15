@@ -19,5 +19,5 @@ input = INPUT()
 for i in range(64):
     input[i] = 0
 getNextPosition = mylib.getNextPosition
-ans = getNextPosition(input, -1, -1, 0, 60000)
+ans = getNextPosition(input, -1, -1, 0, 5000)
 print(ans)
