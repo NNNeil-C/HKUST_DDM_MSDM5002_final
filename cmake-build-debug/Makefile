@@ -153,6 +153,30 @@ src/mcst/hello.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HKUST_DDM_MSDM5002_final.dir/build.make CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/hello.cpp.s
 .PHONY : src/mcst/hello.cpp.s
 
+src/mcst/mcst_helper.o: src/mcst/mcst_helper.cpp.o
+.PHONY : src/mcst/mcst_helper.o
+
+# target to build an object file
+src/mcst/mcst_helper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HKUST_DDM_MSDM5002_final.dir/build.make CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/mcst_helper.cpp.o
+.PHONY : src/mcst/mcst_helper.cpp.o
+
+src/mcst/mcst_helper.i: src/mcst/mcst_helper.cpp.i
+.PHONY : src/mcst/mcst_helper.i
+
+# target to preprocess a source file
+src/mcst/mcst_helper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HKUST_DDM_MSDM5002_final.dir/build.make CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/mcst_helper.cpp.i
+.PHONY : src/mcst/mcst_helper.cpp.i
+
+src/mcst/mcst_helper.s: src/mcst/mcst_helper.cpp.s
+.PHONY : src/mcst/mcst_helper.s
+
+# target to generate assembly for a file
+src/mcst/mcst_helper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HKUST_DDM_MSDM5002_final.dir/build.make CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/mcst_helper.cpp.s
+.PHONY : src/mcst/mcst_helper.cpp.s
+
 src/mcst/test.o: src/mcst/test.cpp.o
 .PHONY : src/mcst/test.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... src/mcst/hello.o"
 	@echo "... src/mcst/hello.i"
 	@echo "... src/mcst/hello.s"
+	@echo "... src/mcst/mcst_helper.o"
+	@echo "... src/mcst/mcst_helper.i"
+	@echo "... src/mcst/mcst_helper.s"
 	@echo "... src/mcst/test.o"
 	@echo "... src/mcst/test.i"
 	@echo "... src/mcst/test.s"

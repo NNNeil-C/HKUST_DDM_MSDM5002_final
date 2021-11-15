@@ -3,6 +3,15 @@
 
 CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/hello.cpp.o: \
  ../src/mcst/hello.cpp
+CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/mcst_helper.cpp.o: \
+ ../src/mcst/GameUtils.hpp \
+ ../src/mcst/LogUtils.h \
+ ../src/mcst/exceptions/CustomBaseException.hpp \
+ ../src/mcst/exceptions/NoMostVisitedNodeException.hpp \
+ ../src/mcst/exceptions/NullPointerExceptions.hpp \
+ ../src/mcst/mcst.hpp \
+ ../src/mcst/mcst_helper.cpp \
+ ../src/mcst/node.hpp
 CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/test.cpp.o: \
  ../src/mcst/GameUtils.hpp \
  ../src/mcst/LogUtils.h \
