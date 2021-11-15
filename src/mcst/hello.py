@@ -2,8 +2,10 @@ import ctypes
 import glob
 
 # sample for using C++ extension
+# specify the .so file path yourself
+so_file_path = r'./build/lib.macosx-11.0-arm64-3.8/mcst_helper*.so'
 # it will print "hello" and the current time
-libfile = glob.glob('./build/*/mcst_helper*.so')[0]
+libfile = glob.glob(so_file_path)[0]
 mylib = ctypes.CDLL(libfile)
 mylib.hello.restype = ctypes.c_void_p
 mylib.hello()
@@ -22,6 +24,8 @@ for i in range(64):
 # now, we are ready to call the C++ extension function
 getNextPosition = mylib.getNextPosition
 # pass the input(game board), last drop x, last drop y, last drop piece and time limit to the function
+# the getNextPosition in C++ looks like below
+# int getNextPosition(const int input[], const int last_x, const int last_y, const int last_piece, const int time_limit)
 ans = getNextPosition(input, -1, -1, 0, 5000)
 # finally, we got a (x, y) to place next piece
 x = ans // 10
