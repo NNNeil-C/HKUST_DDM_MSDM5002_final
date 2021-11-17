@@ -40,6 +40,9 @@ class GameBoard:
     def place_piece(self, piece: Piece):
         self.board[piece.get_pos()] = piece.gamer
 
+    def place_piece(self, piece: Piece):
+        self.board[piece.get_pos()] = piece.gamer
+
     def update_ui(self, screen, x=8, y=8):
         black_color = [0, 0, 0]
         white_color = [255, 255, 255]
