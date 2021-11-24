@@ -8,6 +8,7 @@
 #define NODE_HPP
 #include <cstdlib>
 #include <cstring>
+#include <random>
 #include <list>
 #include "LogUtils.h"
 #include "GameUtils.hpp"

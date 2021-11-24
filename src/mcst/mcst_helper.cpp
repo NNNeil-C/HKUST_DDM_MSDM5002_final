@@ -27,9 +27,7 @@ extern "C"
     }
 
     void hello() {
-        time_t now = time(0);
-        char* dt = ctime(&now);
-        std::cout << "hello, it's " << dt << std::endl;
+        std::cout << "hello" << std::endl;
     }
 }
 

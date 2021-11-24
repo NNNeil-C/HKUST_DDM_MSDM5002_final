@@ -1,0 +1,19 @@
+@startuml temp
+title temp
+
+class Note 
+{
+    - memo : string
+    - id : int
+    + Note(int id, string memo)
+    + search(string key) : bool
+    + modify(int id, string new_memo) : void
+    + print() : void
+}
+
+class Notebook 
+{
+    - notes : vector
+    + add(note new_note) : void
+}
+

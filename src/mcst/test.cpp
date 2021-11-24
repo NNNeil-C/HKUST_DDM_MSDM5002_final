@@ -11,7 +11,6 @@
 #include "GameUtils.hpp"
 #define MAXN 8
 using namespace std;
-
 int main ()
 {
     int **board;
