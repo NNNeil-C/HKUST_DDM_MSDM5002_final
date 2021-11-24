@@ -12,6 +12,10 @@ Work remained by far: Reformation of classes
 
 import pygame
 import UI
+import models
+import ctypes
+import glob
+import platform
 
 
 class HumanPlayer:
@@ -23,6 +27,10 @@ class HumanPlayer:
         row = round((x - 25) / 50)
         col = round((y - 25) / 50)
         self.piece.set_pos(row, col)
+        if is_valid_position(models.gameboard.board, row, col):
+            models.gameboard.board[row, col] = self.piece.get_color()
+            return True
+        return False
 
 
 class AIPlayer:
@@ -90,15 +98,63 @@ class Game:
                     elif e.type == pygame.MOUSEBUTTONDOWN:
                         human = HumanPlayer()
                         human.piece.set_color(1)
-                        human.update_by_human(e)
-                        self.mat.place_piece(human.piece)
-                        print(self.mat.board)
-                        win.check(self.mat, human.piece)
-                        if win.done:
-                            self.winner = self.player1
-                        self.mat.update_ui(screen)
+                        if human.update_by_human(e):
+                            print("human drop true")
+                            self.mat.place_piece(human.piece)
+                            print(self.mat.board)
+                            win.check(self.mat, human.piece)
+                            if win.done:
+                                self.winner = self.player1
+                            self.mat.update_ui(screen)
+                            pygame.event.set_blocked(pygame.MOUSEBUTTONDOWN)
+                            ai = UI.Piece()
+                            ai.set_color(-1)
+                            last_x, last_y = human.piece.get_pos()
+                            x, y = mcst_helper(models.gameboard.board, last_x, last_y, human.piece.get_color(), 5000)
+                            # to do: check ai drop
+                            models.gameboard.board[x, y] = ai.get_color()
+                            ai.set_pos(x, y)
+                            win.check(self.mat, ai)
+                            self.mat.place_piece(ai)
+                            self.mat.update_ui(screen)
+                            pygame.event.clear()
+                            pygame.event.set_allowed(pygame.MOUSEBUTTONDOWN)
 
 
+def is_valid_position(board, row, col):
+    if row < 0 or row > models.gameboard.number_of_rows or col < 0 or col > models.gameboard.number_of_columns:
+        return False
+    if board[row, col] != models.gameboard.none:
+        return False
+    return True
+
+
+def mcst_helper(board, last_x, last_y, last_piece, time_limit=5000):
+    so_file_path = ""
+    if "Win" in platform.platform():
+        so_file_path = r'./build/lib.windows-10-x64-3.7/mcst_helper*.dll'
+    else:
+        so_file_path = r'./mcst_helper*.so'
+    print(so_file_path)
+    libfile = glob.glob(so_file_path)[0]
+    mylib = ctypes.CDLL(libfile)
+    mylib.hello.restype = ctypes.c_void_p
+    mylib.hello()
+
+    INPUT = ctypes.c_int * 64
+    mylib.getNextPosition.argtype = [INPUT, ctypes.c_int, ctypes.c_int, ctypes.c_int, ctypes.c_int]
+    mylib.getNextPosition.restype = ctypes.c_int
+    input = INPUT()
+    for i in range(64):
+        input[i] = 0
+    for i in range(models.gameboard.number_of_rows):
+        for j in range(models.gameboard.number_of_columns):
+            input[i * models.gameboard.number_of_columns + j] = board[i, j]
+    getNextPosition = mylib.getNextPosition
+    ans = getNextPosition(input, last_x, last_y, last_piece, time_limit)
+    x = ans // 10
+    y = ans % 10
+    return x, y
 
 
 if __name__ == '__main__':
