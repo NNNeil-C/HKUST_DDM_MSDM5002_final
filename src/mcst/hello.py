@@ -1,9 +1,14 @@
 import ctypes
 import glob
+import platform
 
 # sample for using C++ extension
 # specify the .so file path yourself
-so_file_path = r'./build/lib.macosx-11.0-arm64-3.8/mcst_helper*.so'
+so_file_path = ""
+if "win" in platform.platform():
+    so_file_path = r'./build/lib.windows-10-x64-3.7/mcst_helper*.dll'
+else:
+    so_file_path = r'./build/lib.macosx-11.0-arm64-3.8/mcst_helper*.so'
 # it will print "hello" and the current time
 libfile = glob.glob(so_file_path)[0]
 mylib = ctypes.CDLL(libfile)
