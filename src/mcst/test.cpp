@@ -6,9 +6,9 @@
  */
 #include <algorithm>
 #include <iostream>
-#include "mcst.hpp"
-#include "LogUtils.h"
-#include "GameUtils.hpp"
+#include "includes/mcst.hpp"
+#include "includes/LogUtils.h"
+#include "includes/GameUtils.hpp"
 #define MAXN 8
 using namespace std;
 int main ()
