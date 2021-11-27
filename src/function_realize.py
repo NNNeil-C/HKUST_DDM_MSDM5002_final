@@ -134,7 +134,7 @@ def mcst_helper(board, last_x, last_y, last_piece, time_limit=5000):
     if "Win" in platform.platform():
         so_file_path = r'./build/lib.windows-10-x64-3.7/mcst_helper*.dll'
     else:
-        so_file_path = r'./mcst_helper*.so'
+        so_file_path = r'./mcst_helper.cpython-38-darwin.so'
     print(so_file_path)
     libfile = glob.glob(so_file_path)[0]
     mylib = ctypes.CDLL(libfile)
