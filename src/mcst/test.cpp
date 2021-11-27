@@ -6,12 +6,11 @@
  */
 #include <algorithm>
 #include <iostream>
-#include "mcst.hpp"
-#include "LogUtils.h"
-#include "GameUtils.hpp"
+#include "includes/mcst.hpp"
+#include "includes/LogUtils.h"
+#include "includes/GameUtils.hpp"
 #define MAXN 8
 using namespace std;
-
 int main ()
 {
     int **board;
@@ -20,6 +19,11 @@ int main ()
     {
         board[i] = new int[MAXN]{};
     }
+    for (int i = 0; i < 4; i ++)
+    {
+        board[0][i] = 1;
+    }
+
     print_board(board);
     std::pair<int, int> last_drop(-1, -1);
     int last_piece = 0;

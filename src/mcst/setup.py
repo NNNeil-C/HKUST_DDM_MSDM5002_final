@@ -5,7 +5,8 @@ setup(
                            sources=['mcst_helper.cpp'],
                            language="c++",
                            include_dirs=[
-                               "exceptions"
+                               "exceptions",
+                               "includes"
                            ],
                            extra_compile_args=['-std=c++11']
                            )
