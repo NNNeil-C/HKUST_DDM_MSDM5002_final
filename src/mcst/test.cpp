@@ -19,6 +19,11 @@ int main ()
     {
         board[i] = new int[MAXN]{};
     }
+    for (int i = 0; i < 4; i ++)
+    {
+        board[0][i] = 1;
+    }
+
     print_board(board);
     std::pair<int, int> last_drop(-1, -1);
     int last_piece = 0;
