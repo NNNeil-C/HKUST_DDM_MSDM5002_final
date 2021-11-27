@@ -1,1 +1,0 @@
-/usr/bin/c++  -fsanitize=address -g -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/hello.cpp.o CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/test.cpp.o CMakeFiles/HKUST_DDM_MSDM5002_final.dir/src/mcst/mcst_helper.cpp.o -o HKUST_DDM_MSDM5002_final 
