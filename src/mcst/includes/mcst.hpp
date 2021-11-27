@@ -26,6 +26,8 @@ private:
 
     void do_single_search();
 
+    bool is_must_win(int &, int &);
+
     static double get_node_uct_value(Node *, double, double c = std::sqrt(2));
 
     static Node *expand(Node *);
@@ -59,8 +61,50 @@ Mcst::Mcst(int **game_board, std::pair<int, int> last_drop, int last_piece) {
     srand(time(nullptr));
 }
 
+bool Mcst::is_must_win(int &x, int &y)
+{
+    if (root->last_piece == 0)
+    {
+        return false;
+    }
+    int current_piece = -1 * root->last_piece;
+    int **game_board;
+    game_board = new int *[MAXN];
+    for (unsigned int i = 0; i < MAXN; i++) {
+        game_board[i] = new int[MAXN];
+        memcpy(game_board[i], root->game_board[i], sizeof(int) * MAXN);
+    }
+    std::pair<int, int> position(-1, -1);
+    bool flag = false;
+    for (auto next_position : root->possible_drop_positions)
+    {
+        int nx = next_position.first;
+        int ny = next_position.second;
+        game_board[nx][ny] = current_piece;
+        position.first = nx;
+        position.second = ny;
+        if (quick_check_win(game_board, position))
+        {
+            x = nx;
+            y = ny;
+            flag = true;
+            break;
+        }
+        game_board[x][y] = 0;
+    }
+    recycle_game_board(game_board);
+    return flag;
+}
+
 //single status query deduction
 std::pair<int, int> Mcst::deduction(time_t time_limit) {
+    // if the next state is a must-win state
+    int must_win_x = -1;
+    int must_win_y = -1;
+    if (is_must_win(must_win_x, must_win_y)) {
+        return std::make_pair(must_win_x, must_win_y);
+    }
+
     using namespace std::chrono;
     LOGD("%s", "starting deducting");
     milliseconds start_time = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
