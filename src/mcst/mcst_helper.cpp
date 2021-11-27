@@ -22,6 +22,22 @@ int getNextPosition(const int input[], const int last_x, const int last_y, const
     return ans;
 }
 
+bool check_win_cpp(const int input[], int x, int y)
+{
+    int **board;
+    board = new int *[MAXN];
+    for (unsigned int i = 0; i < MAXN; i++) {
+        board[i] = new int[MAXN];
+        for (unsigned int j = 0; j < MAXN; j++) {
+            board[i][j] = input[i * MAXN + j];
+        }
+    }
+    bool is_win = quick_check_win(board, std::make_pair(x, y));
+    recycle_game_board(board);
+    return is_win;
+
+}
+
 void hello() {
     std::cout << "hello" << std::endl;
 }
