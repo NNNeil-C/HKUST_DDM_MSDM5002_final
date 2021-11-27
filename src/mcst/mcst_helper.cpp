@@ -1,10 +1,10 @@
 //
 // Created by 陈梓峰 on 15/11/2021.
 //
-/*
 #include "includes/mcst.hpp"
 #include <iostream>
 
+extern "C" {
 int getNextPosition(const int input[], const int last_x, const int last_y, const int last_piece, const int time_limit) {
     int **board;
     board = new int *[MAXN];
@@ -25,5 +25,4 @@ int getNextPosition(const int input[], const int last_x, const int last_y, const
 void hello() {
     std::cout << "hello" << std::endl;
 }
-
-*/
+};

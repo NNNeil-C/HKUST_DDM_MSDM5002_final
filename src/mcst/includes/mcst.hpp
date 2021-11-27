@@ -8,10 +8,10 @@
 #define MCST_HPP
 
 #include "node.hpp"
-#include "includes/LogUtils.h"
-#include "includes/GameUtils.hpp"
-#include "exceptions/NoMostVisitedNodeException.hpp"
-#include "exceptions/NullPointerExceptions.hpp"
+#include "LogUtils.h"
+#include "GameUtils.hpp"
+#include "../exceptions/NoMostVisitedNodeException.hpp"
+#include "../exceptions/NullPointerExceptions.hpp"
 #include <stack>
 #include <cmath>
 #include <vector>

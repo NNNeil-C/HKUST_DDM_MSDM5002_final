@@ -6,7 +6,7 @@
 #define HKUST_DDM_MSDM5002_FINAL_GAMEUTILS_HPP
 
 #include <iostream>
-#include "exceptions/CustomBaseException.hpp"
+#include "../exceptions/CustomBaseException.hpp"
 
 const unsigned int MAXN = 8;
 const unsigned int REQUIRED_PIECES = 5;

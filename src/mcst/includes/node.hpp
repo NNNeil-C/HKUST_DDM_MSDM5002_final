@@ -11,8 +11,8 @@
 #include <cstring>
 #include <random>
 #include <list>
-#include "includes/LogUtils.h"
-#include "includes/GameUtils.hpp"
+#include "LogUtils.h"
+#include "GameUtils.hpp"
 
 class Node {
 public:
