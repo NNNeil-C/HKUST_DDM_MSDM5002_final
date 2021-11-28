@@ -65,7 +65,7 @@ bool check_win_row(int **game_board, int which_piece, int x, int y) {
     if (x + REQUIRED_PIECES > MAXN) {
         return false;
     }
-    for (int i = x; i < x + REQUIRED_PIECES; i++) {
+    for (unsigned int i = x; i < x + REQUIRED_PIECES; i++) {
         if (game_board[i][y] != which_piece) {
             return false;
         }
@@ -79,7 +79,7 @@ bool check_win_col(int **game_board, int which_piece, int x, int y) {
     if (y + REQUIRED_PIECES > MAXN) {
         return false;
     }
-    for (int j = y; j < y + REQUIRED_PIECES; j++) {
+    for (unsigned int j = y; j < y + REQUIRED_PIECES; j++) {
         if (game_board[x][j] != which_piece) {
             return false;
         }
@@ -93,7 +93,7 @@ bool check_win_diagonal(int **game_board, int which_piece, int x, int y) {
     if ((x + REQUIRED_PIECES > MAXN) || (y + REQUIRED_PIECES > MAXN)) {
         return false;
     }
-    for (int step = 0; step < REQUIRED_PIECES; step++) {
+    for (unsigned int step = 0; step < REQUIRED_PIECES; step++) {
         if (game_board[x + step][y + step] != which_piece) {
             return false;
         }
@@ -102,13 +102,13 @@ bool check_win_diagonal(int **game_board, int which_piece, int x, int y) {
 }
 
 // if win by antidiagnal
-bool check_win_anti_diagonal(int **game_board, int which_piece, int x, int y) {
+bool check_win_anti_diagonal(int **game_board, int which_piece, unsigned int x, int y) {
     LOGD("%s", "run in");
-    if ((x + REQUIRED_PIECES > MAXN) || (y - REQUIRED_PIECES < -1)) {
+    if ((x + REQUIRED_PIECES > MAXN) || (y - int(REQUIRED_PIECES) < -1)) {
         LOGD("%s", "run out");
         return false;
     }
-    for (int step = 0; step < REQUIRED_PIECES; step++) {
+    for (unsigned int step = 0; step < REQUIRED_PIECES; step++) {
         if (game_board[x + step][y - step] != which_piece) {
             return false;
         }
@@ -139,7 +139,7 @@ bool in_board(int x, int y) {
 }
 
 bool quick_check_win_row(int **game_board, int piece, int x, int y) {
-    int number = 1;
+    unsigned int number = 1;
     for (int u = x, v = y; in_board(u, v - 1) && (game_board[u][v - 1] == piece); v--) {
         number++;
     }
@@ -150,7 +150,7 @@ bool quick_check_win_row(int **game_board, int piece, int x, int y) {
 }
 
 bool quick_check_win_col(int **game_board, int piece, int x, int y) {
-    int number = 1;
+    unsigned int number = 1;
     for (int u = x, v = y; in_board(u - 1, v) && (game_board[u - 1][v] == piece); u--) {
         number++;
     }
@@ -161,7 +161,7 @@ bool quick_check_win_col(int **game_board, int piece, int x, int y) {
 }
 
 bool quick_check_win_diag(int **game_board, int piece, int x, int y) {
-    int number = 1;
+    unsigned int number = 1;
     for (int u = x, v = y; in_board(u - 1, v - 1) && (game_board[u - 1][v - 1] == piece); u--, v--) {
         number++;
     }
@@ -172,7 +172,7 @@ bool quick_check_win_diag(int **game_board, int piece, int x, int y) {
 }
 
 bool quick_check_win_anti_diag(int **game_board, int piece, int x, int y) {
-    int number = 1;
+    unsigned int number = 1;
     for (int u = x, v = y; in_board(u - 1, v + 1) && (game_board[u - 1][v + 1] == piece); u--, v++) {
         number++;
     }

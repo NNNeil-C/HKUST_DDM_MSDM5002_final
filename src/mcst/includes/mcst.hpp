@@ -18,6 +18,7 @@
 #include <ctime>
 #include <random>
 #include <algorithm>
+#include <chrono>
 
 class Mcst {
 private:
@@ -108,9 +109,14 @@ std::pair<int, int> Mcst::decisive_move(int current_piece)
 
 //single status query deduction
 std::pair<int, int> Mcst::deduction(time_t time_limit) {
+    printf("start deduction\n");
+    printf("root->last_piece is %d", root->last_piece);
     if (root->last_piece != 0)
     {
+        printf("deduction decisive_move test start\n");
+        printf("current piece is %d\n", -root->last_piece);
         auto d_move = decisive_move(-root->last_piece);
+        printf("d_move.first is %d", d_move.first);
         if (d_move.first > -1)
         {
             return d_move;

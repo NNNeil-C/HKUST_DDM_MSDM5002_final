@@ -48,9 +48,9 @@ public:
 };
 
 //default constructor
-Node::Node() : visited_time(0), win_time(0), game_board(nullptr), is_completed(false), max_child_node_number(0) {
+Node::Node() : game_board(nullptr), visited_time(0), win_time(0), is_completed(false), max_child_node_number(0) {
     game_board = new int *[MAXN];
-    for (int i = 0; i <= MAXN; i++) {
+    for (unsigned int i = 0; i <= MAXN; i++) {
         game_board[i] = new int[MAXN]{0};
     }
     last_drop = std::pair<int, int>(-1, -1);
@@ -82,9 +82,9 @@ Node *Node::most_visited_child() const {
         }
     }
     printf("check visit time\n");
-    for (int i = 0; i < MAXN; i ++)
+    for (unsigned int i = 0; i < MAXN; i ++)
     {
-        for (int j = 0; j < MAXN; j ++)
+        for (unsigned int j = 0; j < MAXN; j ++)
         {
             printf("%d ", visit_count[i][j]);
         }
@@ -124,7 +124,7 @@ std::pair<int, int> Node::pop_one_possible_successive_drop() {
     }
     unsigned int random_one = random() % possible_drop_positions.size();
     auto it = possible_drop_positions.begin();
-    for (int i = 0; i < random_one; i++) {
+    for (unsigned int i = 0; i < random_one; i++) {
         it++;
     }
     std::pair<int, int> result((*it).first, (*it).second);
