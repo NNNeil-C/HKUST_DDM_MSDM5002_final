@@ -42,7 +42,7 @@ def do_something_after_wins(ui, win_player, Alice):
 
 def ai_plays(ui, player, game_board, Alice, last_x, last_y, last_piece):
     pygame.event.set_blocked(pygame.MOUSEBUTTONDOWN)
-    x, y = game_utils.ask_monte_carlo_search_tree(game_board, last_x, last_y, last_piece, 200)
+    x, y = game_utils.ask_monte_carlo_search_tree(game_board, last_x, last_y, last_piece, 5000)
     make_drop(game_board, player, x, y, Alice, ui)
     # check if the last drop wins
     is_win = False
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     current_player = Alice
     so_file_path = r"./mcst/build/lib.macosx-11.0-arm64-3.8/mcst_helper.cpython-38-darwin.so"
     if 'Windows' in platform.platform():
-        so_file_path = r"./mcst/build/lib.Windows*/mcst_helper.dll"
+        so_file_path = r".\mcst\build\lib.windows*\mcst_helper.dll"
     game_utils.load_dynamic_lib(so_file_path)
 
     game_board = np.zeros((game_utils.game_board_size, game_utils.game_board_size), dtype=np.int64)
