@@ -64,7 +64,6 @@ if __name__ == '__main__':
                             #player switch
                             current_player = Alice if current_player is Bob else Bob
                             if current_player.is_ai:
-                                pygame.event.set_blocked(pygame.MOUSEBUTTONDOWN)
                                 x, y = game_utils.ask_monte_carlo_search_tree(game_board, row, col, game_board[row, col])
                                 make_drop(game_board, current_player, x, y, Alice, ui)
                                 # check if the last drop wins
@@ -74,4 +73,3 @@ if __name__ == '__main__':
                                     exit()
                                 current_player = Alice if current_player is Bob else Bob
                                 pygame.event.clear()
-                                pygame.event.set_allowed(pygame.MOUSEBUTTONDOWN)
