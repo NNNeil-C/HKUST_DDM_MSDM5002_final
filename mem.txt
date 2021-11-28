@@ -1,0 +1,2788 @@
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 2 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 2 0 
+end print game board
+Process:         HKUST_DDM_MSDM5002_final [84977]
+Path:            /Users/USER/*/HKUST_DDM_MSDM5002_final
+Load Address:    0x102c84000
+Identifier:      HKUST_DDM_MSDM5002_final
+Version:         ???
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [84976]
+
+Date/Time:       2021-11-14 15:34:31.385 +0800
+Launch Time:     2021-11-14 15:34:20.960 +0800
+OS Version:      macOS 11.6 (20G165)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         441.8M
+Physical footprint (peak):  441.8M
+----
+
+leaks Report Version: 4.0
+Process 84977: 2 nodes malloced for 1 KB
+Process 84977: 0 leaks for 0 total leaked bytes.
+
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 1 0 1 
+0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 1 0 1 
+0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 1 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 1 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 2 0 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 1 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 1 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 1 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 1 
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 1 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 1 
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 1 1 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 1 
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 1 1 2 1 
+0 0 2 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 1 
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 0 0 0 1 1 2 1 
+0 0 2 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 1 
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 0 0 0 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 1 
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 0 0 0 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 1 
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 0 0 0 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 1 
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 0 0 0 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+1 0 0 0 0 1 2 1 
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 0 0 0 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+1 0 0 0 0 1 2 1 
+2 0 0 0 2 2 1 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 0 0 0 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+1 0 0 0 0 1 2 1 
+2 0 0 0 2 2 1 2 
+0 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 0 0 0 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+1 0 0 0 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 0 0 0 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 0 2 
+1 0 0 0 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 0 0 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 0 2 
+1 0 0 0 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 0 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 0 2 
+1 0 0 0 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 0 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 0 2 
+1 0 0 0 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 0 2 
+1 0 0 0 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 0 1 1 
+0 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 0 2 
+1 2 0 0 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 0 1 1 
+1 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 0 2 
+1 2 0 0 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 0 1 1 
+1 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 0 2 
+1 2 0 2 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 0 1 1 
+1 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 1 2 
+1 2 0 2 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 1 2 
+1 2 0 2 0 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 1 2 
+1 2 0 2 1 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 0 1 2 
+1 2 2 2 1 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 0 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 0 2 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 0 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 1 2 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 2 0 0 0 2 1 
+1 0 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 1 2 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 2 0 0 0 2 1 
+1 1 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 1 2 0 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 2 0 0 0 2 1 
+1 1 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 0 0 0 2 2 1 2 
+2 1 1 2 2 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 2 0 0 0 2 1 
+1 1 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 0 0 1 2 2 1 2 
+2 1 1 2 2 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 2 0 0 0 2 1 
+1 1 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 2 0 1 2 2 1 2 
+2 1 1 2 2 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 0 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 2 0 0 0 2 1 
+1 1 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 2 1 1 2 2 1 2 
+2 1 1 2 2 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 2 2 1 1 
+1 1 0 0 0 0 2 2 
+2 0 2 0 0 0 2 1 
+1 1 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 2 1 1 2 2 1 2 
+2 1 1 2 2 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 2 2 1 1 
+1 1 0 0 0 0 2 2 
+2 1 2 0 0 0 2 1 
+1 1 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 2 1 1 2 2 1 2 
+2 1 1 2 2 1 1 2 
+end print game board
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 2 2 1 1 
+1 1 0 0 0 2 2 2 
+2 1 2 0 0 0 2 1 
+1 1 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 2 1 1 2 2 1 2 
+2 1 1 2 2 1 1 2 
+end print game board
+-1 wins.
+start print game board
+1 2 1 2 1 1 2 1 
+2 1 2 0 2 2 1 1 
+1 1 0 0 0 2 2 2 
+2 1 2 0 0 0 2 1 
+1 1 0 0 0 1 1 2 
+1 2 2 2 1 1 2 1 
+2 2 1 1 2 2 1 2 
+2 1 1 2 2 1 1 2 
+end print game board
+Process:         HKUST_DDM_MSDM5002_final [85022]
+Path:            /Users/USER/*/HKUST_DDM_MSDM5002_final
+Load Address:    0x100f54000
+Identifier:      HKUST_DDM_MSDM5002_final
+Version:         ???
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [85021]
+
+Date/Time:       2021-11-14 15:39:54.924 +0800
+Launch Time:     2021-11-14 15:35:18.367 +0800
+OS Version:      macOS 11.6 (20G165)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         958.8M
+Physical footprint (peak):  958.8M
+----
+
+leaks Report Version: 4.0
+Process 85022: 2 nodes malloced for 1 KB
+Process 85022: 0 leaks for 0 total leaked bytes.
+
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+0 0 0 0 0 0 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+0 0 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+0 0 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+0 0 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 1 2 2 
+0 0 0 0 0 1 1 2 
+0 0 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 2 0 1 2 2 
+0 0 0 0 0 1 1 2 
+0 0 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 1 0 2 0 1 2 2 
+0 0 0 0 0 1 1 2 
+0 0 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 1 0 2 0 1 2 2 
+0 0 0 0 0 1 1 2 
+2 0 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 1 0 2 1 1 2 2 
+0 0 0 0 0 1 1 2 
+2 0 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 0 2 1 1 2 2 
+0 0 0 0 0 1 1 2 
+2 0 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 0 2 1 1 2 2 
+0 0 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 0 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 0 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 0 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+2 0 0 0 0 0 2 2 
+0 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 0 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 2 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 2 1 1 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 2 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 2 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 2 1 1 
+1 0 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 2 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 2 1 1 
+1 0 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 2 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 2 1 1 
+1 1 0 0 0 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 2 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 2 1 1 
+1 1 2 0 0 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 2 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 2 1 1 
+1 1 2 0 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 2 0 0 0 1 1 2 
+2 1 0 0 0 2 2 1 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 2 0 0 0 0 2 2 
+1 0 0 0 0 2 1 1 
+1 1 2 0 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 2 0 0 0 1 1 2 
+2 1 0 0 1 2 2 1 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 2 0 0 0 0 2 2 
+1 0 0 0 0 2 1 1 
+1 1 2 0 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 2 0 0 0 1 1 2 
+2 1 0 0 1 2 2 1 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 2 0 0 0 0 2 2 
+1 0 0 0 0 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+0 2 0 0 0 1 1 2 
+2 1 0 0 1 2 2 1 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 2 0 0 0 1 2 2 
+1 0 0 0 0 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 0 1 2 2 1 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 2 0 0 0 1 2 2 
+1 0 0 0 0 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 0 1 2 2 1 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 2 0 0 0 1 2 2 
+1 0 1 0 0 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 0 1 2 2 1 
+1 0 2 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 2 0 0 0 1 2 2 
+1 0 1 0 0 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 0 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 2 0 0 0 1 2 2 
+1 0 1 0 0 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 0 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 2 0 0 0 1 2 2 
+1 2 1 0 0 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 0 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 0 0 0 0 0 1 2 
+2 2 0 0 0 1 2 2 
+1 2 1 0 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 0 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 0 0 2 0 0 1 2 
+2 2 0 0 0 1 2 2 
+1 2 1 0 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 0 0 2 0 0 1 2 
+2 2 0 0 0 1 2 2 
+1 2 1 0 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 0 0 2 0 0 1 2 
+2 2 0 0 2 1 2 2 
+1 2 1 0 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 0 0 2 0 1 1 2 
+2 2 0 0 2 1 2 2 
+1 2 1 0 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 0 0 2 0 1 1 2 
+2 2 0 0 2 1 2 2 
+1 2 1 2 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 0 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 1 0 2 0 1 1 2 
+2 2 0 0 2 1 2 2 
+1 2 1 2 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 2 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 1 0 2 0 1 1 2 
+2 2 0 0 2 1 2 2 
+1 2 1 2 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 2 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 1 1 2 0 1 1 2 
+2 2 0 0 2 1 2 2 
+1 2 1 2 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 2 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 1 1 2 0 1 1 2 
+2 2 2 0 2 1 2 2 
+1 2 1 2 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 2 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 1 0 0 1 1 
+2 1 1 2 0 1 1 2 
+2 2 2 0 2 1 2 2 
+1 2 1 2 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 2 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 1 2 0 1 1 
+2 1 1 2 0 1 1 2 
+2 2 2 0 2 1 2 2 
+1 2 1 2 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 2 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 1 2 0 1 1 
+2 1 1 2 0 1 1 2 
+2 2 2 1 2 1 2 2 
+1 2 1 2 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+1 wins.
+start print game board
+2 1 2 2 1 1 2 2 
+2 2 0 2 0 1 1 2 
+2 1 0 1 1 2 2 1 
+1 1 2 1 2 0 1 1 
+2 1 1 2 0 1 1 2 
+2 2 2 1 2 1 2 2 
+1 2 1 2 1 2 1 1 
+1 1 2 2 1 1 1 2 
+end print game board
+Process:         HKUST_DDM_MSDM5002_final [85109]
+Path:            /Users/USER/*/HKUST_DDM_MSDM5002_final
+Load Address:    0x10240c000
+Identifier:      HKUST_DDM_MSDM5002_final
+Version:         ???
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [85108]
+
+Date/Time:       2021-11-14 15:51:39.228 +0800
+Launch Time:     2021-11-14 15:46:37.252 +0800
+OS Version:      macOS 11.6 (20G165)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         992.0M
+Physical footprint (peak):  992.0M
+----
+
+leaks Report Version: 4.0
+Process 85109: 2 nodes malloced for 1 KB
+Process 85109: 0 leaks for 0 total leaked bytes.
+
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 2 0 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 2 1 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 2 1 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 0 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+0 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 0 0 0 2 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 1 0 0 2 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 2 1 
+0 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 1 1 2 
+end print game board
+start print game board
+0 1 0 0 2 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 2 1 
+2 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 1 0 0 2 2 1 2 
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 2 1 
+2 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 1 0 0 2 2 1 2 
+2 0 0 0 0 0 1 1 
+0 0 1 0 0 0 2 1 
+2 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 0 2 2 1 2 
+2 0 0 0 0 0 1 1 
+0 0 1 0 0 0 2 1 
+2 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 0 0 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 0 2 2 1 2 
+2 0 0 0 0 0 1 1 
+0 0 1 0 0 0 2 1 
+2 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 2 0 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 0 2 2 1 2 
+2 0 0 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 2 0 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 0 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 2 0 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 0 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 0 0 0 0 0 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 0 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 0 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 2 0 0 0 0 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 0 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 2 0 0 0 0 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 2 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 2 0 0 0 0 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 2 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 0 0 0 0 0 1 1 
+2 2 0 0 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 2 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 0 0 0 2 
+2 0 0 0 0 0 0 2 
+1 2 0 0 0 0 1 1 
+2 2 0 0 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 2 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 0 0 0 2 
+2 0 0 0 0 1 0 2 
+1 2 0 0 0 0 1 1 
+2 2 0 0 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 2 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 0 0 0 2 
+2 0 0 0 0 1 2 2 
+1 2 0 0 0 0 1 1 
+2 2 0 0 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 2 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 0 0 0 2 
+2 0 0 0 0 1 2 2 
+1 2 0 0 0 0 1 1 
+2 2 1 0 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 2 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 0 2 0 2 
+2 0 0 0 0 1 2 2 
+1 2 0 0 0 0 1 1 
+2 2 1 0 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 2 0 0 0 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 0 1 2 2 
+1 2 0 0 0 0 1 1 
+2 2 1 0 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 2 0 0 2 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 0 1 2 2 
+1 2 0 0 0 0 1 1 
+2 2 1 0 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 0 2 1 0 2 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 0 1 2 2 
+1 2 0 0 0 0 1 1 
+2 2 1 0 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 0 2 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 0 1 2 2 
+1 2 0 0 0 0 1 1 
+2 2 1 0 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 0 2 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 0 1 2 2 
+1 2 0 0 0 0 1 1 
+2 2 1 1 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 0 2 1 1 
+1 0 1 0 0 0 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 0 1 2 2 
+1 2 2 0 0 0 1 1 
+2 2 1 1 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 0 2 1 1 
+1 0 1 0 0 1 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 0 1 2 2 
+1 2 2 0 0 0 1 1 
+2 2 1 1 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 2 2 1 1 
+1 0 1 0 0 1 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 0 1 2 2 
+1 2 2 0 0 0 1 1 
+2 2 1 1 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 2 2 1 1 
+1 0 1 0 0 1 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 1 1 2 2 
+1 2 2 0 0 0 1 1 
+2 2 1 1 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 2 2 1 1 
+1 2 1 0 0 1 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 1 1 2 2 
+1 2 2 0 0 0 1 1 
+2 2 1 1 0 1 2 2 
+1 2 1 0 0 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 2 2 1 1 
+1 2 1 0 0 1 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 1 1 2 2 
+1 2 2 0 0 0 1 1 
+2 2 1 1 0 1 2 2 
+1 2 1 0 1 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 2 2 1 1 
+1 2 1 0 0 1 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 1 1 2 2 
+1 2 2 0 0 0 1 1 
+2 2 1 1 2 1 2 2 
+1 2 1 0 1 1 1 2 
+end print game board
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 2 2 1 1 
+1 2 1 0 0 1 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 1 1 2 2 
+1 2 2 0 0 0 1 1 
+2 2 1 1 2 1 2 2 
+1 2 1 1 1 1 1 2 
+end print game board
+1 wins.
+start print game board
+1 1 1 2 2 2 1 2 
+2 2 2 1 2 2 1 1 
+1 2 1 0 0 1 2 1 
+2 1 0 0 1 2 0 2 
+2 0 0 0 1 1 2 2 
+1 2 2 0 0 0 1 1 
+2 2 1 1 2 1 2 2 
+1 2 1 1 1 1 1 2 
+end print game board
+Process:         HKUST_DDM_MSDM5002_final [85459]
+Path:            /Users/USER/*/HKUST_DDM_MSDM5002_final
+Load Address:    0x100898000
+Identifier:      HKUST_DDM_MSDM5002_final
+Version:         ???
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [85458]
+
+Date/Time:       2021-11-14 16:04:07.442 +0800
+Launch Time:     2021-11-14 15:59:36.270 +0800
+OS Version:      macOS 11.6 (20G165)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         936.9M
+Physical footprint (peak):  936.9M
+----
+
+leaks Report Version: 4.0
+Process 85459: 2 nodes malloced for 1 KB
+Process 85459: 0 leaks for 0 total leaked bytes.
+
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 2 2 
+0 0 0 0 1 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 2 0 0 0 2 2 
+0 0 0 0 1 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 2 0 0 0 2 2 
+0 0 0 0 1 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+0 0 2 0 0 0 2 2 
+0 0 0 0 1 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+1 0 2 0 0 0 2 2 
+0 0 0 0 1 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+1 0 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+1 0 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 1 1 
+0 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+0 0 0 0 0 0 2 2 
+1 0 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 1 1 
+0 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+0 0 1 0 0 0 2 2 
+1 0 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 1 1 
+0 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+2 0 1 0 0 0 2 2 
+1 0 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 1 1 
+0 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+2 0 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+2 0 0 0 0 0 1 1 
+0 0 1 0 0 0 1 1 
+0 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+2 0 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+2 0 0 0 0 0 1 1 
+1 0 1 0 0 0 1 1 
+0 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+2 0 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+2 0 0 0 0 0 1 1 
+1 0 1 0 0 0 1 1 
+2 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+2 0 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+2 0 0 0 0 0 1 1 
+1 0 1 0 0 0 1 1 
+2 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 0 0 0 1 1 
+1 0 1 0 0 0 1 1 
+2 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 0 0 0 1 1 
+1 1 1 0 0 0 1 1 
+2 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 0 0 0 1 1 
+1 1 1 0 0 2 1 1 
+2 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 0 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 0 0 0 1 1 
+1 1 1 0 0 2 1 1 
+2 2 0 0 0 0 2 2 
+2 0 0 0 0 0 0 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 0 0 0 1 1 
+1 1 1 0 0 2 1 1 
+2 2 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 0 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 0 0 0 1 1 
+1 1 1 0 0 2 1 1 
+2 2 0 0 0 0 2 2 
+2 0 0 0 0 0 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 0 0 0 1 1 
+1 1 1 0 0 2 1 1 
+2 2 0 0 0 0 2 2 
+2 2 0 0 0 0 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 0 0 0 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 0 0 0 2 2 
+2 2 0 0 0 0 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 0 0 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 0 0 0 2 2 
+2 2 0 0 0 0 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 0 1 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 0 0 0 2 2 
+2 2 0 0 0 0 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 0 2 1 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 0 0 0 2 2 
+2 2 0 0 0 0 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 0 0 0 2 2 
+2 2 0 0 0 0 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 0 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 0 0 0 2 2 
+2 2 0 0 0 0 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 0 0 0 2 2 
+2 2 1 0 0 0 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 0 0 0 2 2 
+2 2 1 0 0 2 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 1 0 0 2 2 
+2 2 1 0 0 2 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 1 2 0 2 2 
+2 2 1 0 0 2 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 0 2 2 1 
+1 1 0 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 0 0 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 0 2 2 1 
+1 1 2 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 1 0 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 0 2 2 1 
+1 1 2 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 1 2 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 0 2 2 1 
+1 1 2 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 1 2 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 0 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 1 2 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 1 2 2 1 
+1 1 2 0 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 2 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 1 2 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 1 2 2 1 
+1 1 2 1 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 2 2 2 2 
+2 0 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 1 2 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 1 2 2 1 
+1 1 2 1 0 0 1 1 
+2 1 1 0 0 0 2 2 
+1 1 2 0 2 2 2 2 
+2 2 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 1 2 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 1 2 2 1 
+1 1 2 1 0 0 1 1 
+2 1 1 0 0 1 2 2 
+1 1 2 0 2 2 2 2 
+2 2 1 0 1 1 2 2 
+end print game board
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 1 2 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 1 2 2 1 
+1 1 2 1 0 0 1 1 
+2 1 1 0 0 1 2 2 
+1 1 2 2 2 2 2 2 
+2 2 1 0 1 1 2 2 
+end print game board
+-1 wins.
+start print game board
+2 2 1 2 1 2 1 1 
+1 1 1 1 2 2 1 1 
+2 2 1 1 2 1 2 2 
+2 2 1 0 1 2 2 1 
+1 1 2 1 0 0 1 1 
+2 1 1 0 0 1 2 2 
+1 1 2 2 2 2 2 2 
+2 2 1 0 1 1 2 2 
+end print game board
+Process:         HKUST_DDM_MSDM5002_final [85569]
+Path:            /Users/USER/*/HKUST_DDM_MSDM5002_final
+Load Address:    0x10434c000
+Identifier:      HKUST_DDM_MSDM5002_final
+Version:         ???
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [85568]
+
+Date/Time:       2021-11-14 16:13:41.709 +0800
+Launch Time:     2021-11-14 16:08:43.931 +0800
+OS Version:      macOS 11.6 (20G165)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         985.4M
+Physical footprint (peak):  985.4M
+----
+
+leaks Report Version: 4.0
+Process 85569: 2 nodes malloced for 1 KB
+Process 85569: 0 leaks for 0 total leaked bytes.
+
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 0 
+end print game board
+Process:         HKUST_DDM_MSDM5002_final [85648]
+Path:            /Users/USER/*/HKUST_DDM_MSDM5002_final
+Load Address:    0x102cdc000
+Identifier:      HKUST_DDM_MSDM5002_final
+Version:         ???
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [85647]
+
+Date/Time:       2021-11-14 16:16:28.241 +0800
+Launch Time:     2021-11-14 16:16:07.885 +0800
+OS Version:      macOS 11.6 (20G165)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         447.4M
+Physical footprint (peak):  447.4M
+----
+
+leaks Report Version: 4.0
+Process 85648: 2 nodes malloced for 1 KB
+Process 85648: 0 leaks for 0 total leaked bytes.
+
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 1 0 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 1 0 2 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 2 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 1 0 2 
+end print game board
+Process:         HKUST_DDM_MSDM5002_final [85717]
+Path:            /Users/USER/*/HKUST_DDM_MSDM5002_final
+Load Address:    0x1008a8000
+Identifier:      HKUST_DDM_MSDM5002_final
+Version:         ???
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [85716]
+
+Date/Time:       2021-11-14 16:18:00.730 +0800
+Launch Time:     2021-11-14 16:17:40.439 +0800
+OS Version:      macOS 11.6 (20G165)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         447.9M
+Physical footprint (peak):  447.9M
+----
+
+leaks Report Version: 4.0
+Process 85717: 2 nodes malloced for 1 KB
+Process 85717: 0 leaks for 0 total leaked bytes.
+
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 2 1 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 2 1 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 2 1 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 2 
+0 0 0 0 0 1 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 2 1 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 2 
+0 0 0 0 0 1 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 2 1 0 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 2 
+0 0 0 0 0 1 0 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 2 1 1 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 2 
+0 0 0 0 0 1 2 0 
+0 0 0 0 0 0 0 1 
+0 0 0 0 0 2 1 1 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 2 
+0 0 0 0 0 1 2 0 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 2 1 1 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 2 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 2 
+0 0 0 0 0 1 2 0 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 2 1 1 
+end print game board
+start print game board
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 2 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 2 
+0 0 0 0 0 1 2 0 
+0 0 0 0 0 0 1 1 
+0 0 0 0 0 2 1 1 
+end print game board
+Process:         HKUST_DDM_MSDM5002_final [85767]
+Path:            /Users/USER/*/HKUST_DDM_MSDM5002_final
+Load Address:    0x100098000
+Identifier:      HKUST_DDM_MSDM5002_final
+Version:         ???
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [85766]
+
+Date/Time:       2021-11-14 16:19:17.509 +0800
+Launch Time:     2021-11-14 16:19:12.935 +0800
+OS Version:      macOS 11.6 (20G165)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         411.0M
+Physical footprint (peak):  411.0M
+----
+
+leaks Report Version: 4.0
+Process 85767: 2 nodes malloced for 1 KB
+Process 85767: 0 leaks for 0 total leaked bytes.
+
