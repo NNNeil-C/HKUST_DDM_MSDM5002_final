@@ -27,15 +27,10 @@ class game_ui():
         pygame.draw.circle(self.screen, current_piece.color, pos, 18, 0)
         pygame.display.update(update_rect)
 
-    @staticmethod
-    def winner_info_window(winner: str):
-        canvas = pygame.display.set_mode((300, 100))
-        pygame.display.set_caption('Game Result')
-        canvas.fill((255, 239, 213))
+
+    def winner_info_window(self, message: str):
         pygame.font.init()
         my_font = pygame.font.SysFont('Comic Sans MS', 30)
-        if winner != 'Black' or 'White':
-            winner = 'Nobody'
-        text_surface = my_font.render(winner+' wins this game', True, (105, 105, 105))
-        canvas.blit(text_surface, (50, 40))
+        text_surface = my_font.render(message, True, (255, 0, 0))
+        self.screen.blit(text_surface, (50, 40))
         pygame.display.update()

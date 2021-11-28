@@ -12,6 +12,11 @@ import numpy as np
 import sys
 import platform
 
+
+def is_full_gameboard(board):
+    return np.count_nonzero(board) >= game_utils.game_board_size * game_utils.game_board_size
+
+
 def make_drop(board, current_player, row, col, Alice, ui):
     # drop on board
     board[row, col] = 1 if current_player is Alice else -1
@@ -20,20 +25,24 @@ def make_drop(board, current_player, row, col, Alice, ui):
     current_type = piece.piece.black_piece if current_player is Alice else piece.piece.white_piece
     current_piece = piece.piece(current_type)
     ui.drop_piece(current_piece, col, row)
+    if is_full_gameboard(board):
+        ui.winner_info_window("It's a draw game")
+        return True
+    return False
 
 
 def do_something_after_wins(ui, win_player, Alice):
     if win_player is Alice:
-        ui.winner_info_window("Black")
+        ui.winner_info_window("Black wins.")
         print("Black wins")
     else:
-        ui.winner_info_window("White")
+        ui.winner_info_window("White wins.")
         print("White wins")
 
 
 def ai_plays(ui, player, game_board, Alice, last_x, last_y, last_piece):
     pygame.event.set_blocked(pygame.MOUSEBUTTONDOWN)
-    x, y = game_utils.ask_monte_carlo_search_tree(game_board, last_x, last_y, last_piece)
+    x, y = game_utils.ask_monte_carlo_search_tree(game_board, last_x, last_y, last_piece, 200)
     make_drop(game_board, player, x, y, Alice, ui)
     # check if the last drop wins
     is_win = False
@@ -70,7 +79,7 @@ if __name__ == '__main__':
     game_is_over = False
     while True:
         clock.tick(60)
-        if current_player.is_ai:
+        if current_player.is_ai and not game_is_over:
             ai_plays(ui, current_player, game_board, Alice, -1, -1, 0)
             current_player = Alice if current_player is Bob else Bob
         for event in pygame.event.get():
@@ -86,7 +95,7 @@ if __name__ == '__main__':
                         row, col = game_utils.get_click_position(event)
                         # check position
                         if game_utils.is_valid_position(game_board, col, row):
-                            make_drop(game_board, current_player, row, col, Alice, ui)
+                            game_is_over = make_drop(game_board, current_player, row, col, Alice, ui)
                             # check if the last drop wins
                             if game_utils.check_win_cpp(game_board, row, col):
                                 print("someone wins")
@@ -95,7 +104,7 @@ if __name__ == '__main__':
                                 continue
                             #player switch
                             current_player = Alice if current_player is Bob else Bob
-                            if current_player.is_ai:
+                            if current_player.is_ai and not game_is_over:
                                 is_win = ai_plays(ui, current_player, game_board, Alice, row, col, game_board[row][col])
                                 game_is_over |= is_win
                                 current_player = Alice if current_player is Bob else Bob
