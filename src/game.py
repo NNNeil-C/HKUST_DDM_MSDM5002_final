@@ -22,16 +22,16 @@ def make_drop(board, current_player, row, col, Alice, ui):
     ui.drop_piece(current_piece, col, row)
 
 
-def do_something_after_wins(win_player, Alice):
+def do_something_after_wins(ui, win_player, Alice):
     if win_player is Alice:
-        game_gui.game_ui.winner_info_window("Black")
+        ui.winner_info_window("Black")
         print("Black wins")
     else:
-        game_gui.game_ui.winner_info_window("White")
+        ui.winner_info_window("White")
         print("White wins")
 
 
-def ai_plays(player, game_board, Alice, last_x, last_y, last_piece):
+def ai_plays(ui, player, game_board, Alice, last_x, last_y, last_piece):
     pygame.event.set_blocked(pygame.MOUSEBUTTONDOWN)
     x, y = game_utils.ask_monte_carlo_search_tree(game_board, last_x, last_y, last_piece)
     make_drop(game_board, player, x, y, Alice, ui)
@@ -39,7 +39,7 @@ def ai_plays(player, game_board, Alice, last_x, last_y, last_piece):
     is_win = False
     if game_utils.check_win_cpp(game_board, x, y):
         print("someone wins")
-        do_something_after_wins(player, Alice)
+        do_something_after_wins(ui, player, Alice)
         is_win = True
     pygame.event.clear()
     pygame.event.set_allowed(pygame.MOUSEBUTTONDOWN)
@@ -68,11 +68,10 @@ if __name__ == '__main__':
 
     pygame.event.set_blocked([pygame.KEYUP, pygame.KEYDOWN, pygame.MOUSEMOTION])
     game_is_over = False
-
     while True:
         clock.tick(60)
         if current_player.is_ai:
-            ai_plays(current_player, game_board, Alice, -1, -1, 0)
+            ai_plays(ui, current_player, game_board, Alice, -1, -1, 0)
             current_player = Alice if current_player is Bob else Bob
         for event in pygame.event.get():
             # quit game
@@ -91,12 +90,12 @@ if __name__ == '__main__':
                             # check if the last drop wins
                             if game_utils.check_win_cpp(game_board, row, col):
                                 print("someone wins")
-                                do_something_after_wins(current_player, Alice)
+                                do_something_after_wins(ui, current_player, Alice)
                                 game_is_over = True
                                 continue
                             #player switch
                             current_player = Alice if current_player is Bob else Bob
                             if current_player.is_ai:
-                                is_win = ai_plays(current_player, game_board, Alice, row, col, game_board[row][col])
+                                is_win = ai_plays(ui, current_player, game_board, Alice, row, col, game_board[row][col])
                                 game_is_over |= is_win
                                 current_player = Alice if current_player is Bob else Bob
