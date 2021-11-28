@@ -19,6 +19,7 @@ class game_ui():
             pygame.draw.line(self.screen, [0, 0, 0], [25 + 50 * x, 25], [25 + 50 * x, size * 50 - 25], 1)
             pygame.draw.line(self.screen, [0, 0, 0], [25, 25 + 50 * x], [size * 50 - 25, 25 + 50 * x], 1)
         pygame.display.update()
+        self.canvas = pygame.display.set_mode((300, 100))
 
     def drop_piece(self, current_piece, col, row):
         pos = [50 * col + 25, 50 * row + 25]
@@ -26,3 +27,12 @@ class game_ui():
         update_rect = pygame.Rect((pos[0]-18, pos[1]-18), (18*2, 18*2))
         pygame.draw.circle(self.screen, current_piece.color, pos, 18, 0)
         pygame.display.update(update_rect)
+
+    def winner_info_window(self, winner):
+        pygame.display.set_caption('Game Result')
+        self.canvas.fill((255, 239, 213))
+        pygame.font.init()
+        my_font = pygame.font.SysFont('Comic Sans MS', 30)
+        text_surface = my_font.render(winner+' wins this game', True, (105, 105, 105))
+        self.canvas.blit(text_surface, (50, 40))
+        pygame.display.update()
