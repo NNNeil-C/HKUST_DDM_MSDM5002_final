@@ -26,13 +26,15 @@ private:
 
     void do_single_search();
 
-    bool is_must_win(int &, int &);
+    bool is_must_win(int [], int );
+
+    std::pair<int, int> decisive_move(int);
 
     static double get_node_uct_value(Node *, double, double c = std::sqrt(2));
 
     static Node *expand(Node *);
 
-    static double do_simulation(const Node *);
+    double do_simulation(const Node *);
 
     static std::pair<int, int> find_random_valid_position(int **);
 
@@ -61,13 +63,8 @@ Mcst::Mcst(int **game_board, std::pair<int, int> last_drop, int last_piece) {
     srand(time(nullptr));
 }
 
-bool Mcst::is_must_win(int &x, int &y)
+bool Mcst::is_must_win(int xy[], int current_piece)
 {
-    if (root->last_piece == 0)
-    {
-        return false;
-    }
-    int current_piece = -1 * root->last_piece;
     int **game_board;
     game_board = new int *[MAXN];
     for (unsigned int i = 0; i < MAXN; i++) {
@@ -85,25 +82,41 @@ bool Mcst::is_must_win(int &x, int &y)
         position.second = ny;
         if (quick_check_win(game_board, position))
         {
-            x = nx;
-            y = ny;
+            xy[0] = nx;
+            xy[1] = ny;
             flag = true;
             break;
         }
-        game_board[x][y] = 0;
+        game_board[nx][ny] = 0;
     }
     recycle_game_board(game_board);
     return flag;
 }
 
+std::pair<int, int> Mcst::decisive_move(int current_piece)
+{
+    // if the next state is a must-win state
+    int must_win_xy[2];
+    if (is_must_win(must_win_xy, current_piece)) {
+        return std::make_pair(must_win_xy[0], must_win_xy[1]);
+    }
+    if (is_must_win(must_win_xy, -current_piece)) {
+        return std::make_pair(must_win_xy[0], must_win_xy[1]);
+    }
+    return std::make_pair(-1, -1);
+}
+
 //single status query deduction
 std::pair<int, int> Mcst::deduction(time_t time_limit) {
-    // if the next state is a must-win state
-    int must_win_x = -1;
-    int must_win_y = -1;
-    if (is_must_win(must_win_x, must_win_y)) {
-        return std::make_pair(must_win_x, must_win_y);
+    if (root->last_piece != 0)
+    {
+        auto d_move = decisive_move(-root->last_piece);
+        if (d_move.first > -1)
+        {
+            return d_move;
+        }
     }
+
 
     using namespace std::chrono;
     LOGD("%s", "starting deducting");
@@ -238,7 +251,13 @@ double Mcst::do_simulation(const Node *current_node) {
             break;
         }
         LOGD("%s", "start to find random valid position");
-        last_drop = find_random_valid_position(game_board);
+        auto d_move = decisive_move(next_piece);
+        if (d_move.first > -1)
+        {
+            last_drop = d_move;
+        } else {
+            last_drop = find_random_valid_position(game_board);
+        }
         LOGD("%s", "found random valid position");
         LOGD("%s %d %d", "found random valid position", last_drop.first, last_drop.second);
         //drop a new piece

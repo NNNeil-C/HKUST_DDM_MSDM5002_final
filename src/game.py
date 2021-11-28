@@ -34,7 +34,7 @@ if __name__ == '__main__':
     Alice = player.player(piece.piece.black_piece)
     Bob = player.player(piece.piece.white_piece, is_ai=True)
     current_player = Alice
-    so_file_path = r"./mcst_helper*"
+    so_file_path = r"./mcst/build/lib.macosx-11.0-arm64-3.8/mcst_helper.cpython-38-darwin.so"
     game_utils.load_dynamic_lib(so_file_path)
 
     game_board = np.zeros((game_utils.game_board_size, game_utils.game_board_size), dtype=np.int64)
@@ -55,7 +55,9 @@ if __name__ == '__main__':
                     if game_utils.is_valid_position(game_board, col, row):
                         make_drop(game_board, current_player, row, col, Alice, ui)
                         # check if the last drop wins
-                        if game_utils.check_win_cpp(game_board, row, col):
+                        flag = game_utils.check_win_cpp(game_board, row, col)
+                        print(flag)
+                        if flag:
                             print("someone wins")
                             do_something_after_wins(current_player, Alice)
                             exit()

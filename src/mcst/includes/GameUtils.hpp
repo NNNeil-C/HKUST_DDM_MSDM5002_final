@@ -195,7 +195,7 @@ bool quick_check_win(int **game_board, std::pair<int, int> position) {
         return true;
     }
     //col
-    if (quick_check_win_row(game_board, piece, x, y)) {
+    if (quick_check_win_col(game_board, piece, x, y)) {
         return true;
     }
     //diagonal
