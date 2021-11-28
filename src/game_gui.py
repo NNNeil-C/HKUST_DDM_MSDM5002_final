@@ -23,5 +23,6 @@ class game_ui():
     def drop_piece(self, current_piece, col, row):
         pos = [50 * col + 25, 50 * row + 25]
         print(current_piece.color)
+        update_rect = pygame.Rect((pos[0]-18, pos[1]-18), (18*2, 18*2))
         pygame.draw.circle(self.screen, current_piece.color, pos, 18, 0)
-        pygame.display.update()
+        pygame.display.update(update_rect)
