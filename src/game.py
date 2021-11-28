@@ -58,11 +58,12 @@ if __name__ == '__main__':
     Alice = player.player(piece.piece.black_piece, is_ai=Alice_is_ai)
     Bob = player.player(piece.piece.white_piece, is_ai=not Alice_is_ai)
     current_player = Alice
-    so_file_path = r"./mcst/build/lib.macosx-11.0-arm64-3.8/mcst_helper.cpython-38-darwin.so"
+    so_file_path = r"./mcst_helper*.dll"
     game_utils.load_dynamic_lib(so_file_path)
 
     game_board = np.zeros((game_utils.game_board_size, game_utils.game_board_size), dtype=np.int64)
 
+    pygame.event.set_blocked([pygame.KEYUP, pygame.KEYDOWN, pygame.MOUSEMOTION])
     game_is_over = False
     while True:
         clock.tick(60)
@@ -76,22 +77,23 @@ if __name__ == '__main__':
                 exit()
             # click down
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if game_is_over:
-                    continue
-                if not current_player.is_ai:
-                    # get position
-                    row, col = game_utils.get_click_position(event)
-                    # check position
-                    if game_utils.is_valid_position(game_board, col, row):
-                        make_drop(game_board, current_player, row, col, Alice, ui)
-                        # check if the last drop wins
-                        if game_utils.check_win_cpp(game_board, row, col):
-                            print("someone wins")
-                            do_something_after_wins(current_player, Alice)
-                            game_is_over = True
-                        # player switch
-                        current_player = Alice if current_player is Bob else Bob
-                        if current_player.is_ai:
-                            is_win = ai_plays(current_player, game_board, Alice, row, col, game_board[row][col])
-                            game_is_over |= is_win
+                if event.button == 1:
+                    if game_is_over:
+                        continue
+                    if not current_player.is_ai:
+                        # get position
+                        row, col = game_utils.get_click_position(event)
+                        # check position
+                        if game_utils.is_valid_position(game_board, col, row):
+                            make_drop(game_board, current_player, row, col, Alice, ui)
+                            # check if the last drop wins
+                            if game_utils.check_win_cpp(game_board, row, col):
+                                print("someone wins")
+                                do_something_after_wins(current_player, Alice)
+                                exit()
+                            #player switch
                             current_player = Alice if current_player is Bob else Bob
+                            if current_player.is_ai:
+                                is_win = ai_plays(current_player, game_board, Alice, row, col, game_board[row][col])
+                                game_is_over |= is_win
+                                current_player = Alice if current_player is Bob else Bob
