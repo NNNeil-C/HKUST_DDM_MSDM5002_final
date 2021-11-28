@@ -23,8 +23,10 @@ def make_drop(board, current_player, row, col, Alice, ui):
 
 def do_something_after_wins(win_player, Alice):
     if win_player is Alice:
+        winner_info_window("Black")
         print("Black wins")
     else:
+        winner_info_window("White")
         print("White wins")
 
 
