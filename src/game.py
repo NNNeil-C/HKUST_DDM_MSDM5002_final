@@ -34,7 +34,7 @@ if __name__ == '__main__':
     Alice = player.player(piece.piece.black_piece)
     Bob = player.player(piece.piece.white_piece, is_ai=True)
     current_player = Alice
-    so_file_path = r"./mcst_helper*"
+    so_file_path = r"./mcst_helper*.dll"
     game_utils.load_dynamic_lib(so_file_path)
 
     game_board = np.zeros((game_utils.game_board_size, game_utils.game_board_size), dtype=np.int64)
@@ -49,7 +49,7 @@ if __name__ == '__main__':
                 exit()
             # click down
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.buttons == 1:
+                if event.button == 1:
                     if not current_player.is_ai:
                         # get position
                         row, col = game_utils.get_click_position(event)
@@ -61,7 +61,7 @@ if __name__ == '__main__':
                                 print("someone wins")
                                 do_something_after_wins(current_player, Alice)
                                 exit()
-                            # player switch
+                            #player switch
                             # current_player = Alice if current_player is Bob else Bob
                             # if current_player.is_ai:
                             #     pygame.event.set_blocked(pygame.MOUSEBUTTONDOWN)
