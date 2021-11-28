@@ -10,6 +10,7 @@ import game_utils
 from models import piece, player
 import numpy as np
 import sys
+import platform
 
 def make_drop(board, current_player, row, col, Alice, ui):
     # drop on board
@@ -23,10 +24,10 @@ def make_drop(board, current_player, row, col, Alice, ui):
 
 def do_something_after_wins(win_player, Alice):
     if win_player is Alice:
-        winner_info_window("Black")
+        game_gui.game_ui.winner_info_window("Black")
         print("Black wins")
     else:
-        winner_info_window("White")
+        game_gui.game_ui.winner_info_window("White")
         print("White wins")
 
 
@@ -58,13 +59,16 @@ if __name__ == '__main__':
     Alice = player.player(piece.piece.black_piece, is_ai=Alice_is_ai)
     Bob = player.player(piece.piece.white_piece, is_ai=not Alice_is_ai)
     current_player = Alice
-    so_file_path = r"./mcst_helper*.dll"
+    so_file_path = r"./mcst/build/lib.macosx-11.0-arm64-3.8/mcst_helper.cpython-38-darwin.so"
+    if 'Windows' in platform.platform():
+        so_file_path = r"./mcst/build/lib.Windows*/mcst_helper.dll"
     game_utils.load_dynamic_lib(so_file_path)
 
     game_board = np.zeros((game_utils.game_board_size, game_utils.game_board_size), dtype=np.int64)
 
     pygame.event.set_blocked([pygame.KEYUP, pygame.KEYDOWN, pygame.MOUSEMOTION])
     game_is_over = False
+
     while True:
         clock.tick(60)
         if current_player.is_ai:
@@ -77,9 +81,7 @@ if __name__ == '__main__':
                 exit()
             # click down
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    if game_is_over:
-                        continue
+                if event.button == 1 and not game_is_over:
                     if not current_player.is_ai:
                         # get position
                         row, col = game_utils.get_click_position(event)
@@ -90,7 +92,8 @@ if __name__ == '__main__':
                             if game_utils.check_win_cpp(game_board, row, col):
                                 print("someone wins")
                                 do_something_after_wins(current_player, Alice)
-                                exit()
+                                game_is_over = True
+                                continue
                             #player switch
                             current_player = Alice if current_player is Bob else Bob
                             if current_player.is_ai:
