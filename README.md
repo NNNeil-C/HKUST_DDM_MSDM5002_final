@@ -12,3 +12,6 @@ Generally, you should build the .so file(Unix) or .dll file(Windows) by yourself
 - For Windows, build .dll files with Visual Studio.
 ### step 2 : load the extension file using `ctype` package
 - check the ./src/mcst/hello.py for help
+
+## How to play
+- A demo.ipynb file is under the sir directory, it can run on MacOS and windows(x64). Enjoy it. ^_^
