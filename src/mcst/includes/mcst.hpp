@@ -27,9 +27,9 @@ private:
 
     void do_single_search();
 
-    bool is_must_win(int [], int );
+    bool is_must_win(int **, int [], int );
 
-    std::pair<int, int> decisive_move(int);
+    std::pair<int, int> decisive_move(int **, int);
 
     static double get_node_uct_value(Node *, double, double c = std::sqrt(2));
 
@@ -64,13 +64,13 @@ Mcst::Mcst(int **game_board, std::pair<int, int> last_drop, int last_piece) {
     srand(time(nullptr));
 }
 
-bool Mcst::is_must_win(int xy[], int current_piece)
+bool Mcst::is_must_win(int ** pre_board, int xy[], int current_piece)
 {
     int **game_board;
     game_board = new int *[MAXN];
     for (unsigned int i = 0; i < MAXN; i++) {
         game_board[i] = new int[MAXN];
-        memcpy(game_board[i], root->game_board[i], sizeof(int) * MAXN);
+        memcpy(game_board[i], pre_board[i], sizeof(int) * MAXN);
     }
     std::pair<int, int> position(-1, -1);
     bool flag = false;
@@ -94,14 +94,14 @@ bool Mcst::is_must_win(int xy[], int current_piece)
     return flag;
 }
 
-std::pair<int, int> Mcst::decisive_move(int current_piece)
+std::pair<int, int> Mcst::decisive_move(int **board, int current_piece)
 {
     // if the next state is a must-win state
     int must_win_xy[2];
-    if (is_must_win(must_win_xy, current_piece)) {
+    if (is_must_win(board, must_win_xy, current_piece)) {
         return std::make_pair(must_win_xy[0], must_win_xy[1]);
     }
-    if (is_must_win(must_win_xy, -current_piece)) {
+    if (is_must_win(board, must_win_xy, -current_piece)) {
         return std::make_pair(must_win_xy[0], must_win_xy[1]);
     }
     return std::make_pair(-1, -1);
@@ -115,7 +115,7 @@ std::pair<int, int> Mcst::deduction(time_t time_limit) {
     {
         printf("deduction decisive_move test start\n");
         printf("current piece is %d\n", -root->last_piece);
-        auto d_move = decisive_move(-root->last_piece);
+        auto d_move = decisive_move(root->game_board, -root->last_piece);
         printf("d_move.first is %d", d_move.first);
         if (d_move.first > -1)
         {
@@ -257,7 +257,7 @@ double Mcst::do_simulation(const Node *current_node) {
             break;
         }
         LOGD("%s", "start to find random valid position");
-        auto d_move = decisive_move(next_piece);
+        auto d_move = decisive_move(game_board, next_piece);
         if (d_move.first > -1)
         {
             last_drop = d_move;
